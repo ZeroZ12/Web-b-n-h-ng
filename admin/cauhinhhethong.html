@@ -1,0 +1,338 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Admin Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h2 class="text-2xl font-bold">
+      Cấu hình chung
+     </h2>
+     <button class="bg-blue-500 text-white px-4 py-2 rounded">
+      Lưu thông tin
+     </button>
+    </div>
+    <div class="bg-white p-6 rounded shadow">
+     <h3 class="text-xl font-semibold mb-4">
+      Thông Tin Cửa Hàng
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div>
+       <label class="block text-gray-700">
+        Tên cửa hàng
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Tên công ty
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Slogan
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart sản phẩm Apple"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Copyright
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Copyright © 2024 Walmart Store"/>
+      </div>
+     </div>
+     <div class="mb-6">
+      <label class="block text-gray-700 mb-2">
+       Giới thiệu ngắn
+      </label>
+      <textarea class="w-full border rounded p-2 h-32">Walmart</textarea>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div class="text-center">
+       <label class="block text-gray-700 mb-2">
+        Logo
+       </label>
+       <img alt="Logo placeholder" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/Vl51yZAbHnvkCABYqJ8Fa7rmy0i0-JaapGexJkKGChs.jpg" width="100"/>
+      </div>
+      <div class="text-center">
+       <label class="block text-gray-700 mb-2">
+        Favicon
+       </label>
+       <img alt="Favicon placeholder" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/T8hjO-WN1rRENqSTOgwmnP3MwXOEh2PbOFDkjx2zjfk.jpg" width="100"/>
+      </div>
+      <div class="text-center">
+       <label class="block text-gray-700 mb-2">
+        QR_APP
+       </label>
+       <img alt="QR code placeholder" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/90AGevBkfQijtvXZ-W35wTFKSBA4HQ4UCoE_2aFqqKc.jpg" width="100"/>
+      </div>
+      <div class="text-center">
+       <label class="block text-gray-700 mb-2">
+        Appstore App
+       </label>
+       <img alt="Appstore app placeholder" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/cXpNSdDUtK8NqCtPuZ7775UyQrt6qHcZbrrMtR_oRf0.jpg" width="100"/>
+      </div>
+      <div class="text-center">
+       <label class="block text-gray-700 mb-2">
+        Playstore App
+       </label>
+       <img alt="Playstore app placeholder" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/F_8beZ-_O9XfrBo50PVMAV3Ir4NIfWSGh6CCdi1rmB4.jpg" width="100"/>
+      </div>
+     </div>
+     <h3 class="text-xl font-semibold mb-4">
+      Thông Tin Liên Hệ
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div>
+       <label class="block text-gray-700">
+        Địa chỉ
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="578 ĐIện Biên Phủ, Hoàng Mai, Hà Nội"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Địa chỉ email
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart@gmail.com"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Hotline
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="0328282828"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Mã số thuế
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="2299991022"/>
+      </div>
+      <div class="col-span-2">
+       <label class="block text-gray-700">
+        Bản đồ
+       </label>
+       <textarea class="w-full border rounded p-2 h-32">https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.123456789!2d105.123456789!3d21.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abcd1234!2sWalmart!5e0!3m2!1sen!2s!4v1234567890</textarea>
+      </div>
+     </div>
+     <h3 class="text-xl font-semibold mb-4">
+      Tối Ưu SEO
+     </h3>
+     <div class="mb-6">
+      <label class="block text-gray-700 mb-2">
+       Xem trước kết quả tìm kiếm
+      </label>
+      <div class="bg-gray-100 p-4 rounded">
+       <p class="text-blue-500">
+        Walmart
+       </p>
+       <p class="text-green-500">
+        https://123.123.123/walmart-store
+       </p>
+       <p>
+        Walmart Store
+       </p>
+      </div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div>
+       <label class="block text-gray-700">
+        Tiêu đề trang
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart Store"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Thẻ alt ảnh
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="Walmart Store"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Đường dẫn
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="walmart-store"/>
+      </div>
+     </div>
+     <h3 class="text-xl font-semibold mb-4">
+      Mạng Xã Hội
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+       <label class="block text-gray-700">
+        Facebook
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.facebook.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Twitter
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.twitter.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Instagram
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.instagram.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Youtube
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.youtube.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Tiktok
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.tiktok.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Pinterest
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.pinterest.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        LinkedIn
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.linkedin.com/"/>
+      </div>
+      <div>
+       <label class="block text-gray-700">
+        Telegram
+       </label>
+       <input class="w-full border rounded p-2" type="text" value="https://www.telegram.org/"/>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

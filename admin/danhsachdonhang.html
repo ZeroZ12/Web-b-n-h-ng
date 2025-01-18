@@ -1,0 +1,300 @@
+<html>
+<head>
+    <title>Order List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+        <!-- Main Content -->
+        <div class="w-4/5 p-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <i class="fas fa-bars text-xl mr-4"></i>
+                    <input type="text" placeholder="Tìm kiếm ở đây" class="border rounded p-2 w-96">
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-bell text-xl mr-4"></i>
+                    <i class="fas fa-user-circle text-xl"></i>
+                </div>
+            </div>
+            <!-- Order List -->
+            <div class="bg-white p-6 rounded shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">DANH SÁCH ĐƠN HÀNG</h2>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded">+ Thêm mới</button>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex space-x-4">
+                        <button class="bg-gray-200 px-4 py-2 rounded">Trạng thái đơn hàng</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded">Trạng thái thanh toán</button>
+                        <input type="text" placeholder="Nhập để tìm kiếm" class="border rounded p-2">
+                    </div>
+                    <button class="bg-gray-200 px-4 py-2 rounded">Tải lại trang</button>
+                </div>
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">STT</th>
+                            <th class="py-2 px-4 border-b">Email</th>
+                            <th class="py-2 px-4 border-b">Tổng tiền</th>
+                            <th class="py-2 px-4 border-b">Phí vận chuyển</th>
+                            <th class="py-2 px-4 border-b">Giảm giá</th>
+                            <th class="py-2 px-4 border-b">Tổng cộng</th>
+                            <th class="py-2 px-4 border-b">Trạng thái thanh toán</th>
+                            <th class="py-2 px-4 border-b">Trạng thái đơn hàng</th>
+                            <th class="py-2 px-4 border-b">Ngày đặt</th>
+                            <th class="py-2 px-4 border-b">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">1</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN A<br>nguyenvana@gmail.com</td>
+                            <td class="py-2 px-4 border-b">1,000,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">1,012,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-red-500">Đã huỷ đơn</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">2</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN B<br>nguyenvanb@gmail.com</td>
+                            <td class="py-2 px-4 border-b">38,177,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">38,189,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-green-500">Hoàn thành</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">3</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN C<br>nguyenvanc@gmail.com</td>
+                            <td class="py-2 px-4 border-b">25,416,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">25,428,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-yellow-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">4</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN D<br>nguyenvand@gmail.com</td>
+                            <td class="py-2 px-4 border-b">25,416,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">25,428,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-yellow-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">5</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN E<br>nguyenvane@gmail.com</td>
+                            <td class="py-2 px-4 border-b">14,378,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">14,390,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-gray-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">6</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN F<br>nguyenvanf@gmail.com</td>
+                            <td class="py-2 px-4 border-b">14,378,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">14,390,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-gray-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">7</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN G<br>nguyenvang@gmail.com</td>
+                            <td class="py-2 px-4 border-b">14,378,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">14,390,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-gray-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">8</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN H<br>nguyenvanh@gmail.com</td>
+                            <td class="py-2 px-4 border-b">14,378,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">14,390,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-gray-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">9</td>
+                            <td class="py-2 px-4 border-b">NGUYEN VAN I<br>nguyenvani@gmail.com</td>
+                            <td class="py-2 px-4 border-b">18,456,000 đ</td>
+                            <td class="py-2 px-4 border-b">12,000 đ</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">18,468,000 đ</td>
+                            <td class="py-2 px-4 border-b text-green-500">Thanh toán VNPay</td>
+                            <td class="py-2 px-4 border-b text-gray-500">Đang xử lý</td>
+                            <td class="py-2 px-4 border-b">20/11/2023 12:00</td>
+                            <td class="py-2 px-4 border-b"><button class="bg-blue-500 text-white px-2 py-1 rounded">Xem</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flex justify-between items-center mt-4">
+                    <div class="text-gray-600">Hiển thị 1 đến 10 của 50 mục</div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 border rounded">1</button>
+                        <button class="px-3 py-1 border rounded">2</button>
+                        <button class="px-3 py-1 border rounded">3</button>
+                        <button class="px-3 py-1 border rounded">4</button>
+                        <button class="px-3 py-1 border rounded">5</button>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="mr-2">Hiển thị</span>
+                        <select class="border rounded p-2">
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                        </select>
+                        <span class="ml-2">mục</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
