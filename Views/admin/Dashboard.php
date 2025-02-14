@@ -37,20 +37,7 @@
                             <td class="p-2 border text-blue-500">Tai nghe</td>
                             <td class="p-2 border"><input type="checkbox" checked></td>
                         </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Áo khoác M3</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">MAC</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
+
                         <!-- Repeat for each product -->
                         <tr class="bg-gray-100">
                             <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu vàng</td>
@@ -59,90 +46,7 @@
                             <td class="p-2 border text-blue-500">Phụ kiện</td>
                             <td class="p-2 border"><input type="checkbox" checked></td>
                         </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu đen</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Trắng đen</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Xanh Lục</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu xám</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu đỏ</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Xanh Dương</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Magic Mouse</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Nhựa Trong Apple</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Magic Keyboard</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Magic Keyboard</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Cáp USB-C - Lightning 1m</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Cáp sạc không dây Apple Watch</td>
-                            <td class="p-2 border">Sản phẩm giao diện</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
+
                     </tbody>
                 </table>
                 <div class="flex justify-between items-center mt-4">
