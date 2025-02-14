@@ -5,11 +5,11 @@ class HomeController
     public function index()
     {
         $product = new Product;
-        $laptop = (new Product)->listProductInCategory(1);
-        $PC = (new Product)->listProductInCategory(2);
+        $laptop = (new Product)->listProductLapGaming();
+        $products = (new Product)->listProductOtherLaptop();
 
         $categories = (new Category)->all();
 
-        return view("clients.home",compact('laptop', 'PC', 'categories'));
+        return view("clients.home",compact('laptop', 'products' ,'categories'));
     }
 }
