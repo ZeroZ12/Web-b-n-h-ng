@@ -70,6 +70,7 @@
         <i class="fas fa-shopping-cart">
         </i>
         <i class="fas fa-user">
+          
         </i>
       </div>
     </div>

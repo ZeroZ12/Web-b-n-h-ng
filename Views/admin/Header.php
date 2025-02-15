@@ -26,7 +26,7 @@
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-home mr-2">
                             </i>
-                            Tổng quan
+                            <a class="nav-link active" aria-current="page" href="<?= ADMIN_URL ?>">Tổng quan</a>
                         </a>
                     </li>
                     <li class="mb-2">
@@ -82,14 +82,14 @@
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                                     <i class="fas fa-box-open mr-2">
                                     </i>
-                                    Danh Sách Sản Phẩm
+                                    <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Danh Sách Sản Phẩm</a>
                                 </a>
                             </li>
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                                     <i class="fas fa-layer-group mr-2">
                                     </i>
-                                    Nhóm Sản Phẩm
+                                    <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">Nhóm Sản Phẩm</a>
                                 </a>
                             </li>
                             <li class="mb-2">

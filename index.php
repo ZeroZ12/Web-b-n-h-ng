@@ -8,6 +8,7 @@ require_once __DIR__ . "/Common/function.php";
 require_once __DIR__ . "/Models/BaseModel.php";
 require_once __DIR__ . "/Models/Category.php";
 require_once __DIR__ . "/Models/Product.php";
+require_once __DIR__ . "/Models/User.php";
 
 //Controller
 require_once __DIR__ . "/Controllers/AutherController.php";
@@ -23,6 +24,7 @@ match ($ctl) {
     // 'category' => (new ProductController)->list()
     'detail' => (new ProductController)->show(),
     // 'register' => (new AuthController)->register(),
-    'search' => (new SearchController)->search(),
+    // 'login' =>( new AuthController)->login(),
+    // 'logout' => (new AuthController)->logout(), 
     default => view( 'errors.404'),
 };

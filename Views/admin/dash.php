@@ -3,7 +3,7 @@
 <div class="w-4/5 p-6">
             <div class="flex justify-between items-center mb-6">
                 <input type="text" placeholder="Tìm kiếm sản phẩm" class="border p-2 w-1/2">
-                <button class="bg-green-500 text-white px-4 py-2 rounded">+ Thêm mới</button>
+                <a href="<?= ADMIN_URL . '?ctl=addsp' ?>" class="btn btn-primary">+ Thêm mới</a>
             </div>
             <div class="bg-white p-4 rounded shadow">
                 <h2 class="text-xl font-bold mb-4">DANH SÁCH SẢN PHẨM</h2>
