@@ -23,103 +23,76 @@
             <nav>
                 <ul>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded nav-link active" href="<?= ADMIN_URL ?>" aria-current="page">
                             <i class="fas fa-home mr-2">
+                                Tổng quan
                             </i>
-                            <a class="nav-link active" aria-current="page" href="<?= ADMIN_URL ?>">Tổng quan</a>
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
-                            <i class="fas fa-envelope mr-2">
-                            </i>
-                            Tin nhắn
                         </a>
                     </li>
                     <li class="mb-2">
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-chart-bar mr-2">
+                                Thống Kê
                             </i>
-                            Thống Kê
                         </a>
                     </li>
                     <li class="mb-2">
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-shopping-cart mr-2">
+                                Đơn Hàng
                             </i>
-                            Đơn Hàng
                         </a>
                     </li>
                     <li class="mb-2">
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-users mr-2">
+                                Thành Viên
                             </i>
-                            Thành Viên
                         </a>
                     </li>
                     <li class="mb-2">
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-box mr-2">
+                                SẢN PHẨM
                             </i>
-                            Sản Phẩm
                         </a>
                         <ul class="ml-4 mt-2">
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
                                     <i class="fas fa-list mr-2">
+                                        Danh Sách Thuộc Tính
                                     </i>
-                                    Danh Sách Thuộc Tính
                                 </a>
                             </li>
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                                     <i class="fas fa-tags mr-2">
+                                        Danh Sách Thương Hiệu
                                     </i>
-                                    Danh Sách Thương Hiệu
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                                <a class="flex items-center p-2 hover:bg-blue-700 rounded nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">
                                     <i class="fas fa-box-open mr-2">
+                                        Danh Sách Sản Phẩm
                                     </i>
-                                    <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Danh Sách Sản Phẩm</a>
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                                <a class="flex items-center p-2 hover:bg-blue-700 rounded nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">
                                     <i class="fas fa-layer-group mr-2">
+                                        Nhóm Sản Phẩm
                                     </i>
-                                    <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">Nhóm Sản Phẩm</a>
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
-                                    <i class="fas fa-star mr-2">
-                                    </i>
-                                    Đánh Giá Sản Phẩm
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="mb-2">
                         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
-                            <i class="fas fa-bullhorn mr-2">
-                            </i>
-                            Marketing
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                             <i class="fas fa-newspaper mr-2">
+                                Bài Viết
                             </i>
-                            Bài Viết
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
-                            <i class="fas fa-cogs mr-2">
-                            </i>
-                            Cấu hình
+
                         </a>
                     </li>
                 </ul>

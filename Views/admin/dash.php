@@ -1,64 +1,95 @@
 <?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
 
-<div class="w-4/5 p-6">
-            <div class="flex justify-between items-center mb-6">
-                <input type="text" placeholder="Tìm kiếm sản phẩm" class="border p-2 w-1/2">
-                <a href="<?= ADMIN_URL . '?ctl=addsp' ?>" class="btn btn-primary">+ Thêm mới</a>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-                <h2 class="text-xl font-bold mb-4">DANH SÁCH SẢN PHẨM</h2>
-                <div class="flex justify-between items-center mb-4">
-                    <div class="flex space-x-4">
-                        <select class="border p-2">
-                            <option>Chọn tình trạng</option>
-                        </select>
-                        <input type="text" placeholder="Nhập tên sản phẩm" class="border p-2">
-                    </div>
-                    <div class="flex space-x-4">
-                        <button class="bg-gray-200 px-4 py-2 rounded">Tất cả trạng thái</button>
-                        <button class="bg-orange-500 text-white px-4 py-2 rounded">Lưu trữ</button>
-                    </div>
-                </div>
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="p-2 border">Tên sản phẩm</th>
-                            <th class="p-2 border">Loại sản phẩm</th>
-                            <th class="p-2 border">Tình trạng</th>
-                            <th class="p-2 border">Thương hiệu</th>
-                            <th class="p-2 border">Trạng thái</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white">
-                            <td class="p-2 border">Tai nghe Bluetooth T5 Plus 2023</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Tai nghe</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-
-                        <!-- Repeat for each product -->
-                        <tr class="bg-gray-100">
-                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu vàng</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">Phụ kiện</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-                <div class="flex justify-between items-center mt-4">
-                    <div class="flex space-x-2">
-                        <button class="bg-gray-200 px-4 py-2 rounded">1</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded">2</button>
-                        <button class="bg-gray-200 px-4 py-2 rounded">3</button>
-                    </div>
-                    <div class="text-gray-500">Showing 1 to 10 of 30 entries</div>
-                </div>
-            </div>
-        </div>
+<div class="flex-1 p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h1 class="text-2xl font-semibold">
+      TỔNG QUAN BÁO CÁO
+     </h1>
+     <div class="flex items-center">
+      <input class="border rounded p-2 mr-4" placeholder="Tìm kiếm..." type="text"/>
+      <i class="fas fa-bell text-xl mr-4">
+      </i>
+      <img alt="User profile picture" class="rounded-full" height="40" src="https://placehold.co/40x40" width="40"/>
+     </div>
     </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Tổng giá trị đơn hàng
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       162,557,248,561 đ
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Lợi nhuận gộp
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       37,519,327,650 đ
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Đơn hàng
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       864
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Giá trị tồn kho
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       235,034,324,600 đ
+      </p>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Doanh thu thuần
+      </h2>
+      <img alt="Graph showing net revenue" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Lợi nhuận gộp
+      </h2>
+      <img alt="Graph showing gross profit" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Top sản phẩm bán chạy
+      </h2>
+      <ul class="list-disc pl-5">
+       <li>
+        AirPods (4th gen) 1,000,000 đ
+       </li>
+       <li>
+        iPhone 13 20,000,000 đ
+       </li>
+       <li>
+        Apple MagSafe Charger 1,200,000 đ
+       </li>
+       <li>
+        USB-C to Lightning Cable 1m 500,000 đ
+       </li>
+       <li>
+        iPhone 13 Pro Max Silicone Case 1,500,000 đ
+       </li>
+      </ul>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Giá trị tồn kho theo tháng
+      </h2>
+      <img alt="Graph showing inventory value by month" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+    </div>
+   </div>
 
 <?php include_once ROOT_DIR . "Views/admin/footer.php";

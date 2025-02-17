@@ -129,15 +129,6 @@
           </li>
           <li>
             <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-headphones">
-              </i>
-              <span>
-                Loa, Micro, Webcam
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
               <i class="fas fa-tv">
               </i>
               <span>
@@ -160,42 +151,6 @@
               </i>
               <span>
                 Chuột &amp; Lót chuột
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-headphones-alt">
-              </i>
-              <span>
-                Tai Nghe
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-chair">
-              </i>
-              <span>
-                Ghế - Bàn
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-network-wired">
-              </i>
-              <span>
-                Phần mềm, mạng
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-gamepad">
-              </i>
-              <span>
-                Handheld, Console
               </span>
             </a>
           </li>

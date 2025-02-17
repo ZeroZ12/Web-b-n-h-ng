@@ -263,7 +263,7 @@
                                 <button type="submit">Gửi</button>
                             </form>
                         <?php else: ?>
-                            <div>Bạn cần <b><a href="<?= ROOT_URL_ . '?ctl=login' ?>"></a></b> để bình luận</div>
+                            <div>Bạn cần <b><a href="<?= ROOT_URL . '?ctl=login' ?>"></a></b> để bình luận</div>
                         <?php endif; ?>
                         <!-- <div class="col-md-3">
                             <div id="review-form">
@@ -314,7 +314,7 @@
                 <img src="<?= $pro['image'] ?>" alt="Product Image">
             </div>
             <div class="product-body">
-                <a href="<?= ROOT_URL_ . '?ctl=detail&id=' . $pro['id'] ?>">
+                <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pro['id'] ?>">
                     <h5 class="product-name"><?= $pro['name'] ?></h5>
                 </a>
                 <div>

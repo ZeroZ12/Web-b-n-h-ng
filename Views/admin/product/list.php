@@ -1,47 +1,70 @@
 <?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
 
-<div>
-    <?php if ($message != '') : ?>
-        <div class="alert alert-success">
-            <?= $message ?>
+<div class="w-4/5 p-6">
+    <div class="flex justify-between items-center mb-6">
+        <input type="text" placeholder="Tìm kiếm sản phẩm" class="border p-2 w-1/2">
+        <a class="bg-green-500 text-white px-4 py-2 rounded" href="<?= ADMIN_URL . '?ctl=addsp' ?>">+ Thêm mới</a>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-bold mb-4">DANH SÁCH SẢN PHẨM</h2>
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+                <select class="border p-2">
+                    <option>Chọn tình trạng</option>
+                </select>
+                <input type="text" placeholder="Nhập tên sản phẩm" class="border p-2">
+            </div>
+            <div class="flex space-x-4">
+                <button class="bg-gray-200 px-4 py-2 rounded">Tất cả trạng thái</button>
+                <button class="bg-orange-500 text-white px-4 py-2 rounded">Lưu trữ</button>
+            </div>
         </div>
-    <?php endif ?>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Image</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Status</th>
-                <th scope="col">Category</th>
-                <th scope="col">
-                    <a href="<?= ADMIN_URL . '?ctl=addsp' ?>" class="btn btn-primary">Create</a>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($products as $pro) : ?>
-                <tr>
-                    <th scope="row"><?= $pro['id'] ?></th>
-                    <td><?= $pro['name'] ?></td>
-                    <td>
-                        <img src="<?= ROOT_URL . $pro['image'] ?>" width="60" alt="">
-                    </td>
-                    <td><?= $pro['price'] ?></td>
-                    <td><?= $pro['quantity'] ?></td>
-                    <td><?= $pro['status'] ? 'Đang kinh doanh' : 'Ngừng kinh doanh' ?></td>
-                    <td><?= $pro['cate_name'] ?></td>
-                    <td>
-                        <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-primary">Sửa</a>
-                        <a href="<?= ADMIN_URL . '?ctl=deletesp&id=' . $pro['id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không')">Xóa</a>
-                    </td>
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="p-2 border">Tên sản phẩm</th>
+                    <th class="p-2 border">Ảnh sản phẩm</th>
+                    <th class="p-2 border">Giá sản phẩm</th>
+                    <th class="p-2 border">Số lượng sản phẩm</th>
+                    <th class="p-2 border">Tình trạng</th>
+                    <th class="p-2 border">Danh mục</th>
+                    <th class="p-2 border"></th>
+                    <th class="p-2 border">Điều chỉnh</th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                <?php foreach ($products as $pro) : ?>
 
+                    <tr class="bg-white">
+                        <td class="p-2 border"><?= $pro['name'] ?></td>
+                        <td class="p-2 border"><img src="<?= ROOT_URL . $pro['image'] ?>" width="60" alt=""></td>
+                        <td class="p-2 border text-green-500"><?= $pro['price'] ?></td>
+                        <td class="p-2 border text-blue-500"><?= $pro['quantity'] ?></td>
+                        <td class="p-2 border text-blue-500"><?= $pro['status'] ? 'Đang kinh doanh' : 'Ngừng kinh doanh' ?></td>
+                        <td class="p-2 border text-blue-500"><?= $pro['cate_name'] ?></td>
+                        <td class="p-2 border"><input type="checkbox" checked></td>
+                        <td>
+                            <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-primary">Sửa</a>
+                            <a href="<?= ADMIN_URL . '?ctl=deletesp&id=' . $pro['id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không')">Xóa</a>
+                        </td>
+                    </tr>
+                    <!-- <tr class="bg-gray-100">
+                            <td class="p-2 border">Áo khoác M3</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">MAC</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr> -->
+                <?php endforeach ?>
+            </tbody>
+        </table>
+        <div class="flex justify-between items-center mt-4">
+            <div class="flex space-x-2">
+                <button class="bg-gray-200 px-4 py-2 rounded">1</button>
+            </div>
+            <div class="text-gray-500">Showing 1 to 10 of 30 entries</div>
+        </div>
+    </div>
+</div>
 
 <?php include_once ROOT_DIR . "Views/admin/Header.php" ?>

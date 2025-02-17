@@ -44,7 +44,7 @@
             <!-- Product Card 1 -->
             <?php foreach ($products as $product) : ?>
             <div class="bg-white p-4 rounded-lg shadow">
-                <img alt="PC GVN Intel i5-12400F VGA RTX 4060" class="w-full h-48 object-cover mb-4" src="https://file.hstatic.net/200000722513/file/thang_01_layout_web_-06.png" />
+                <img alt="" class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" />
                 <h3 class="text-lg font-bold">
                     <!-- PC GVN Intel i5-12400F VGA RTX 4060 -->
                     <h5 class="product-name"><?= $product['name'] ?></h5>
@@ -91,7 +91,7 @@
             <!-- Laptop Card 1 -->
             <?php foreach ($laptops as $laptop) : ?>
             <div class="bg-white p-4 rounded-lg shadow">
-                <img alt="PC GVN Intel i5-12400F VGA RTX 4060" class="w-full h-48 object-cover mb-4" src="https://file.hstatic.net/200000722513/file/thang_01_layout_web_-06.png" />
+                <img alt="" class="w-full h-48 object-cover mb-4" src="<?= $laptop['image'] ?>" />
                 <h3 class="text-lg font-bold">
                     <!-- PC GVN Intel i5-12400F VGA RTX 4060 -->
                     <h5 class="product-name"><?= $laptop['name'] ?></h5>
