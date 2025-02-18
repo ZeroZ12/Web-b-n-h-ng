@@ -47,7 +47,7 @@ class ProductController
         // $_SESSION['totalQuantity'] = (new CartController)-> totalQuantityInCart();
         // $comments = (new Comment)->listCommentInProduct($id);
         return view(
-            'clients.products.detail', compact('product','categories','title','productReleads','comments')
+            'clients.products.detail', compact('product','categories','title','productReleads')
         );
     }
 }

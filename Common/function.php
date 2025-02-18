@@ -9,6 +9,8 @@ function view($path_view, $data  = [])
     include_once ROOT_DIR . "Views/$path_view.php";
 
 }
+// var_dump(ROOT_DIR);
+// exit;
 
 function dd($data)
 {

@@ -29,5 +29,12 @@ match ($ctl) {
     'updatesp' => (new Products)->update(),
     'deletesp' => (new Products)->delete(),
 
+    'listdm' => (new Categorys)->index(),
+    'adđm'=> (new Categorys)->add(),
+    'store' => (new Categorys)->store(),
+    'editdm' => (new Categorys)->edit(),
+    'updatedm'=> (new Categorys)->update(),
+    'deletedm' => (new Categorys)->delete(),
+ 
     default =>view('errors.404'),
 };

@@ -15,7 +15,7 @@ class Categorys
         $message = $_SESSION['message'] ?? '';
         unset($_SESSION['message']);
         $categories = (new Category)->all();
-        return view('admin.categorys.list', compact('categorys','message'));
+        return view('admin.categorys.list', compact('categories','message'));
     }
 
     public function add()
@@ -30,6 +30,15 @@ class Categorys
         $_SESSION['message'] = "Thêm mới dữ liệu thành công";
         header('location: ' . ADMIN_URL . '?ctl=listdm');
         die;
+    }
+
+    public function edit()
+    {
+        $id = $_GET['id'];
+        $category = (new Category)->find($id);
+        $message = $_SESSION['message'] ?? '';
+        unset( $_SESSION['message']);
+        return view('admin.categorys.edit', compact('category','message'));
     }
 
     public function update()
