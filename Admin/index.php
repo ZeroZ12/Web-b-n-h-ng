@@ -30,7 +30,7 @@ match ($ctl) {
     'deletesp' => (new Products)->delete(),
 
     'listdm' => (new Categorys)->index(),
-    'adđm'=> (new Categorys)->add(),
+    'adddm'=> (new Categorys)->add(),
     'store' => (new Categorys)->store(),
     'editdm' => (new Categorys)->edit(),
     'updatedm'=> (new Categorys)->update(),

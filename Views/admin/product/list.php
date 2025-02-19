@@ -1,6 +1,11 @@
 <?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
 
 <div class="w-4/5 p-6">
+    <?php if ($message != '') : ?>
+        <div class="mt-3 mb-3 alert alert-success">
+            <?= $message ?>
+        </div>
+    <?php endif ?>
     <div class="flex justify-between items-center mb-6">
         <input type="text" placeholder="Tìm kiếm sản phẩm" class="border p-2 w-1/2">
         <a class="bg-green-500 text-white px-4 py-2 rounded" href="<?= ADMIN_URL . '?ctl=addsp' ?>">+ Thêm mới</a>
@@ -48,13 +53,6 @@
                             <a href="<?= ADMIN_URL . '?ctl=deletesp&id=' . $pro['id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không')">Xóa</a>
                         </td>
                     </tr>
-                    <!-- <tr class="bg-gray-100">
-                            <td class="p-2 border">Áo khoác M3</td>
-                            <td class="p-2 border">Sản phẩm có sẵn</td>
-                            <td class="p-2 border text-green-500">Còn hàng</td>
-                            <td class="p-2 border text-blue-500">MAC</td>
-                            <td class="p-2 border"><input type="checkbox" checked></td>
-                        </tr> -->
                 <?php endforeach ?>
             </tbody>
         </table>

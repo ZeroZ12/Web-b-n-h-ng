@@ -1,27 +1,54 @@
-<?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
+<?php include_once ROOT_DIR . "Views/admin/Header.php"; ?>
 
-<div>
-    <?php if ($message != '') : ?>
-        <div class="mt-3 mb-3 alert alert-success">
+<div class="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+    <?php if (!empty($message)) : ?>
+        <div class="mb-4 p-3 text-green-700 bg-green-100 rounded-lg">
             <?= $message ?>
         </div>
-    <?php endif ?>
-    <form class="mt-3" action="<?= ADMIN_URL . '?ctl=updatedm' ?>" method="post">
-        <div class="mb-3">
-            <label for="">Tên sản danh mục</label>
-            <input type="text" name="cate_name" value="<?= $category['cate_name'] ?>" class="form-control">
+    <?php endif; ?>
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Cập Nhật Nhóm Sản Phẩm</h2>
+
+    <form action="<?= ADMIN_URL . '?ctl=updatedm' ?>" method="post">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Tên nhóm sản phẩm -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Tên nhóm sản phẩm (*)</label>
+                <input type="text" name="cate_name" value="<?= htmlspecialchars($category['cate_name']) ?>" 
+                       class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+            </div>
+
+            <!-- Loại sản phẩm -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Mô tả nhóm sản phẩm</label>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center space-x-2">
+                        <input type="radio" name="type" value="1" 
+                               class="form-radio text-blue-600" 
+                               <?= $category['type'] ? 'checked' : '' ?>>
+                        <span class="text-gray-700">Laptop</span>
+                    </label>
+
+                    <label class="flex items-center space-x-2">
+                        <input type="radio" name="type" value="0" 
+                               class="form-radio text-blue-600" 
+                               <?= $category['type'] == 0 ? 'checked' : '' ?>>
+                        <span class="text-gray-700">PC</span>
+                    </label>
+                </div>
+            </div>
         </div>
 
-        <div class="mb-3">
-            <label for="">Loại sản phẩm</label> <br>
-            <input type="radio" name="type" value="1" <?= $category['type'] ? 'checked' : '' ?> id=""> Laptop
-            <input type="radio" name="type" value="0" <?= $category['type'] == 0 ? 'checked' : '' ?>> Phụ kiện
-        </div>
         <input type="hidden" name="id" value="<?= $category['id'] ?>">
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Cập nhật</button>
+
+        <!-- Nút Lưu -->
+        <div class="flex justify-end mt-6">
+            <button type="submit" 
+                    class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                Lưu Thông Tin
+            </button>
         </div>
     </form>
 </div>
 
-<?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
+<?php include_once ROOT_DIR . "Views/admin/Footer.php"; ?>

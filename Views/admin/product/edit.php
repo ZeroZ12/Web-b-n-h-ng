@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("location: " . ADMIN_URL . "?ctl=listsp");
     exit();
 }
+
 ?>
 
 <?php include_once ROOT_DIR . "Views/admin/Header.php" ?>
