@@ -1,4 +1,8 @@
 <?php include_once ROOT_DIR . "Views/clients/header.php" ?>
+  <!-- Main Content -->
+  <main class="container mx-auto mt-4">
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Sidebar -->
 <?php include_once ROOT_DIR . "Views/clients/sidebar.php" ?>
 <!-- Main Section -->
 <section class="col-span-10">

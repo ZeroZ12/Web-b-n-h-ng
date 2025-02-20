@@ -73,13 +73,15 @@
         <i class="fas fa-shopping-cart">
         </i>
         <i class="fas fa-user">
-          
+          <?= $_SESSION['user']['fullname'] ?? '' ?>
+          <?php if(isset($_SESSION['user'])) : ?>
+            <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
+          <?php else : ?>
+            <li><a href="<?= ROOT_URL . '?ctl=login' ?>">Đăng nhập</a></li>
+            <?php endif ?>
         </i>
       </div>
     </div>
   </header>
-  <!-- Main Content -->
-  <main class="container mx-auto mt-4">
-    <div class="grid grid-cols-12 gap-4">
-      <!-- Sidebar -->
+
       

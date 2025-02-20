@@ -22,8 +22,8 @@ $ctl = $_GET['ctl'] ?? '';
 match ($ctl) {
     '', 'home' => (new HomeController)->index(),
     'detail' => (new ProductController)->show(),
-    'register' => (new AuthController)->register(),
-    'login' =>( new AuthController)->login(),
-    'logout' => (new AuthController)->logout(), 
+    'register' => (new AutherController)->register(),
+    'login' =>( new AutherController)->login(),
+    'logout' => (new AutherController)->logout(), 
     default => view( 'errors.404'),
 };
