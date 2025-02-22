@@ -14,7 +14,10 @@
             <div class="flex items-center space-x-2">
                 <img alt="User avatar" class="rounded-full" height="30" src="https://storage.googleapis.com/a1aa/image/WQo27Ha-8uFRQiGnxBMcMaOOGdlvGfm2Vm9Jcgo5CR8.jpg" width="30" />
                 <span>
-                    Trần Văn A
+                    Hello <?= $_SESSION['user']['fullname'] ?? '' ?>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
+                    <?php endif ?>
                 </span>
             </div>
         </div>

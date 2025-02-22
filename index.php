@@ -14,6 +14,7 @@ require_once __DIR__ . "/Models/User.php";
 require_once __DIR__ . "/Controllers/AutherController.php";
 require_once __DIR__ . "/Controllers/CartController.php";
 require_once __DIR__ . "/Controllers/HomeController.php";
+require_once __DIR__ . "/Controllers/SearchController.php";
 require_once __DIR__ . "/Controllers/OrderController.php";
 require_once __DIR__ . "/Controllers/ProductController.php";
 
@@ -25,5 +26,11 @@ match ($ctl) {
     'register' => (new AutherController)->register(),
     'login' =>( new AutherController)->login(),
     'logout' => (new AutherController)->logout(), 
+    'add-cart' => (new CartController)->add(),
+    'view-cart' => (new CartController)->view(),
+    'delete-cart' => (new CartController)->delete(),
+    'update-cart' => (new CartController)->update(),
+    'search' => (new SearchController)->search(),
+    'view-checkout' => (new CartController)->viewCheck(),
     default => view( 'errors.404'),
 };

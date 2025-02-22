@@ -4,14 +4,26 @@ class AutherController
 {
     public function register()
     {
-        if($_SERVER['REQUEST_METHOD'] === 'POST')
-        {
+        $message = $_SESSION['message'] ?? null;
+        unset($_SESSION['message']);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $data = $_POST;
 
-            $password = $_POST['password'];
+            $userModel = new User;
 
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            if($userModel->emailExists($data['email'])) {
+                $_SESSION['message'] = "Email này đã tồn tại";
+                header("location: " . ROOT_URL . "?ctl=register");
+                exit();
+            }
 
+            // Mặc định gán role là 'user' nếu không có trong request
+            $data['role'] = $data['role'] ?? 'user';
+
+            // $password = $_POST['password'];
+            $password = password_hash(($data['password']), PASSWORD_DEFAULT);
             $data['password'] = $password;
 
             (new User)->create($data);
@@ -19,36 +31,34 @@ class AutherController
             $_SESSION['message'] = 'Đăng ký thành công';
 
             header("location: " . ROOT_URL . "?ctl=login");
-            die;
+            exit(); // Dừng chương trình ngay sau khi chuyển hướng
         }
-        return view('clients.users.register');
+        return view('clients.users.register', compact('message'));
     }
-
     public function login()
     {
         $error = null;
-        if($_SERVER['REQUEST_METHOD'] === "POST")
-        {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $email = $_POST['email'];
 
             $password = $_POST['password'];
 
             $user = (new User)->findUserOfEmail($email);
 
-            if($user)
-            {
-                if(password_verify($password, $user['password']))
-                {
+            if ($user) {
+                if (password_verify($password, $user['password'])) {
                     $_SESSION['user'] = $user;
 
-                    if($user['role'] == 'admin')
-                    {
+                    if ($user['role'] == 'admin') {
                         header("location: " . ADMIN_URL);
-                    }header("location: " . ROOT_URL);
-                }else{
+                        exit(); // Dừng chương trình ngay sau khi chuyển hướng
+                    }
+                    header("location: " . ROOT_URL);
+                    exit(); // Dừng chương trình ngay sau khi chuyển hướng
+                } else {
                     $error = "Email / Mật khẩu của bạn không đúng";
                 }
-            }else{
+            } else {
                 $error = "Email / Mật khẩu của bạn không đúng";
             }
         }
@@ -63,10 +73,9 @@ class AutherController
         header("location: index.php");
     }
 
-    public function index() 
+    public function index()
     {
         $users = (new User)->all();
         return view('admin.users.list', compact('users'));
     }
-
 }

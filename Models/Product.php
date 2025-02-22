@@ -1,9 +1,5 @@
 <?php
 
-/**
- * lớp Product dùng để thao tác dữ liệu của bảng products
- * 
- */
 class Product extends BaseModel
 {
     /**
@@ -16,7 +12,6 @@ class Product extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    //Tìm kiếm
     public function searchProductName($name){
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE name LIKE '%$name%'";
         $stmt = $this->conn->prepare($sql);
@@ -35,7 +30,6 @@ class Product extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
     /**
      * Hàm lấy ra các sản phẩm không phải là laptop gaming
      * được xác định bởi type=0
@@ -47,11 +41,6 @@ class Product extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    /**
-     * Hàm lấy sản phẩm theo danh mục
-     * @id: mã danh mục
-     */
     public function listProductInCategory($id)
     {
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE c.id=:id";
@@ -59,10 +48,6 @@ class Product extends BaseModel
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    /**
-     * function create: thêm dữ liệu sản phẩm
-     * @data: mảng dữ liệu cần thêm
-     */
     public function create($data)
     {
         $sql = "INSERT INTO products(name, image, price, quantity, description, status, category_id) VALUES(:name, :image, :price, :quantity, :description, :status, :category_id)";
@@ -70,11 +55,6 @@ class Product extends BaseModel
         $stmt = $this->conn->prepare($sql);
         $stmt->execute($data);
     }
-    /**
-     * function update: cập nhật dữ liệu
-     * @id: mã sản phẩm cần cập nhật
-     * @data: mảng dữ liệu cần cập nhật
-     */
     public function update($id, $data)
     {
         $sql = "UPDATE products SET name=:name, image=:image, price=:price, quantity=:quantity, description=:description, status=:status, category_id=:category_id WHERE id=:id";
@@ -84,10 +64,6 @@ class Product extends BaseModel
         $data['id'] = $id;
         $stmt->execute($data);
     }
-    /**
-     * function delete: xóa bản ghi
-     * @id: mã sản phẩm cần xóa
-     */
     public function delete($id)
     {
         try {

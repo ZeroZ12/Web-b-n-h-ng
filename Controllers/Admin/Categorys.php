@@ -2,6 +2,15 @@
 
 class Categorys
 {
+    public function __construct()
+    {
+        $user = $_SESSION['user'] ?? [];
+        if (!$user || $user['role'] != 'admin') {
+            header("location: " . ROOT_URL);
+            exit(); // Dừng chương trình ngay sau khi chuyển hướng
+        }
+    }
+
     public function index()
     {
         $message = $_SESSION['message'] ?? '';
@@ -39,7 +48,7 @@ class Categorys
         $category = (new Category)->find($id);
 
         $category = $category[0] ?? null;
-        
+
         $message = $_SESSION['message'] ?? '';
 
         unset($_SESSION['message']);
@@ -50,7 +59,7 @@ class Categorys
     public function update()
     {
         $data = $_POST;
-        
+
         (new Category)->update($data['id'], $data);
 
         $_SESSION['message'] = "Cập nhật dữ liệu thành công";

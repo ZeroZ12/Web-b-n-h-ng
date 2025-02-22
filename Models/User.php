@@ -14,7 +14,7 @@ class User extends BaseModel
     {
         $sql = "SELECT * FROM users WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['id'=>$id]);
+        $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -22,15 +22,27 @@ class User extends BaseModel
     {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['email'=>$email]);
+        $stmt->execute(['email' => $email]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function emailExists($email)
+    {
+        $sql = "SELECT COUNT(*) FROM users WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['email' => $email]);
+        return $stmt->fetchColumn() > 0; // Trả về true nếu có email trong DB
     }
 
     public function create($data)
     {
-        $sql = "INSERT INTO users(fullname, email, password, phone, address) VALUES (:fullname, :email, :password, :phone, :address)";
+        $sql = "INSERT INTO users (fullname, email, password, phone, address, role) 
+            VALUES (:fullname, :email, :password, :phone, :address, :role)";
+
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute(
+            $data
+        );
     }
 
     public function update($id, $data)

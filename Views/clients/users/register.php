@@ -1,6 +1,11 @@
 <?php include_once ROOT_DIR . "./Views/clients/header.php" ?>
 
 <div class="signup bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+    <?php if ($message != '') : ?>
+        <div class="mt-3 mb-3 alert alert-success">
+            <?= $message ?>
+        </div>
+    <?php endif ?>
     <div class="flex justify-between items-center mb-4">
         <h2 class="text-lg font-semibold">ĐĂNG KÝ TÀI KHOẢN</h2>
         <button class="text-gray-500 text-xl">&times;</button>

@@ -9,10 +9,17 @@
       <input class="border rounded p-2 mr-4" placeholder="Tìm kiếm..." type="text"/>
       <i class="fas fa-bell text-xl mr-4">
       </i>
-      <img alt="User profile picture" class="rounded-full" height="40" src="https://placehold.co/40x40" width="40"/>
-     </div>
+      <i class="fas fa-user">
+         Hello <?= $_SESSION['user']['fullname'] ?? '' ?>
+          <?php if(isset($_SESSION['user'])) : ?>
+            <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
+            <?php endif ?>
+        </i>
+      <!-- <img alt="User profile picture" class="rounded-full" height="40" src="https://placehold.co/40x40" width="40"/> -->
+     </div> 
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+    <h1>Chào mừng đến trang ADMIN</h1>
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
      <div class="bg-white p-4 rounded shadow">
       <h2 class="text-lg font-semibold">
        Tổng giá trị đơn hàng
@@ -89,7 +96,7 @@
       </h2>
       <img alt="Graph showing inventory value by month" height="300" src="https://placehold.co/600x300" width="600"/>
      </div>
-    </div>
-   </div>
+    </div> -->
+</div>
 
 <?php include_once ROOT_DIR . "Views/admin/footer.php";

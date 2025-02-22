@@ -15,7 +15,8 @@
             </a>
             /
             <span>
-            <?= $product['name'] ?>            </span>
+            <?= $product['name'] ?>            
+        </span>
         </nav>
         <div class="flex flex-col lg:flex-row bg-white p-4 rounded shadow">
             <div class="lg:w-1/3">
@@ -36,7 +37,8 @@
             </div>
             <div class="lg:w-2/3 lg:pl-8">
                 <h1 class="text-xl font-bold mb-2">
-                <?= $product['name'] ?>                </h1>
+                <?= $product['name'] ?>                
+            </h1>
                 <div class="flex items-center mb-2">
                     <span class="text-yellow-500 text-lg">
                         <i class="fas fa-star">
@@ -132,8 +134,11 @@
         </div>
 
         <div class="max-w-4xl mx-auto p-4">
-            <h1 class="text-lg font-bold mb-4">Đánh giá & Nhận xét PC GVN Intel i5-12400F/ VGA RX 6500XT (H610) (Powered
-                by ASUS)</h1>
+            <h1 class="text-lg font-bold mb-4">Giới thiệu về <?= $product['name'] ?></h1>
+            <div>
+            <?= $product['description'] ?>
+            </div>
+            <h1 class="text-lg font-bold mb-4">Đánh giá & Nhận xét <?= $product['name'] ?></h1>
             <div class="flex items-center mb-4">
                 <span class="text-red-500 text-4xl font-bold">0/5</span>
                 <div class="ml-4">

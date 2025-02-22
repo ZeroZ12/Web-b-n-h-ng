@@ -5,6 +5,14 @@
 class Products
 {
 
+    public function __construct()
+    {
+        $user = $_SESSION['user'] ?? [];
+        if (!$user || $user['role'] != 'admin') {
+            header("location: " . ROOT_URL);
+            exit(); // Dừng chương trình ngay sau khi chuyển hướng
+        }
+    }
 
     public function index()
     {
@@ -16,6 +24,7 @@ class Products
 
         return view('admin.product.list', compact('products', 'message'));
     }
+
 
     public function create()
     {
