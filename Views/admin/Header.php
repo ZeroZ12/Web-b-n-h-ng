@@ -15,7 +15,7 @@
         <div class="bg-red-600 text-white w-64 p-4">
             <div class="flex items-center mb-6">
                 <div class="bg-white rounded-full p-2">
-                    <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40" />
+                    <img alt="Logo" class="w-8 h-8" height="40" src="https://d3la0uqcqx40x5.cloudfront.net/wp-content/uploads/2022/03/Gundam-game-quiz-page-will-recommend-titles-like-Extreme-Vs-Maxiboost-ON.jpg" width="40" />
                 </div>
                 <span class="ml-2 text-xl font-bold">
                     TRANG QUẢN TRỊ
@@ -65,13 +65,13 @@
                                     </i>
                                 </a>
                             </li> -->
-                            <li class="mb-2">
+                            <!-- <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                                     <i class="fas fa-tags mr-2">
                                         Danh Sách Thương Hiệu
                                     </i>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">
                                     <i class="fas fa-box-open mr-2">

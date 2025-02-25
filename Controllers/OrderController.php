@@ -29,4 +29,15 @@ class OrderController
         $categories = (new Category)->all();
         return view("clients.user.order", compact('orders','user','categories'));
     }
+    public function detail()
+    {
+        $id = $_GET['id'];
+        if($_SERVER['REQUEST_METHOD'] === "POST"){
+            (new Order)->updateStatus($id,4);
+        }
+        $order = (new Order)->find($id);
+        $order_details = (new Order)->listOrderDetail($id);
+        $status = (new Order)->status_details;
+        return view("clients.user.detail", compact('order','order_details','status',));
+    }
 }

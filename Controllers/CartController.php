@@ -95,32 +95,76 @@ class CartController
         {
             return header("location: " . ROOT_URL . '?ctl=login');
         }
+
         $user = $_SESSION['user'];
         $cartst = $_SESSION['carts'] ?? [];
         $sumPrice = $this->totalPriceInCart();
         return view("clients.carts.checkout", compact('user','cartst','sumPrice'));
     }
-    public function check()
+    public function checkout()
     {
-        if (!isset($_SESSION['user']))
-        {
-            return header("location: " . ROOT_URL . '?ctl=login');
+        $user_id = $_POST['user_id'] ?? null;
+        $fullname = $_POST['fullname'] ?? null;
+        $phone = $_POST['phone'] ?? null;
+        $address = $_POST['address'] ?? null;
+        $payment_method = $_POST['payment_method'] ?? null;
+
+        if(!$user_id || !$fullname || !$phone || !$address || !$payment_method) {
+            die("Vui lòng nhập đầy đủ thông tin thanh toán!!");
         }
-        $user = $_SESSION['user'];
-        $cartst = $_SESSION['carts'] ?? [];
+
+        $user = [
+            'id' => $user_id,
+            'fullname' => $fullname,
+            'phone' => $phone,
+            'address' => $address,
+            'role' => $_SESSION['user']['role'],
+            'active' => $_SESSION['user']['active'],
+        ];
+        (new User)->update($user_id, $user);
+
         $sumPrice = $this->totalPriceInCart();
-        return view("clients.carts.check", compact('user','cartst','sumPrice'));
+
+        if($sumPrice <= 0){
+            die("Giỏ hàng của bạn hiện ko có sp để thanh toán");
+        }
+
+        $order = [
+            'user_id' => $user_id,
+            'status' => 1,
+            'payment_method' => $payment_method,
+            'total_price' => $sumPrice,
+        ];
+        $order_id = (new Order)->create($order);
+
+        $cartst = $_SESSION['carts'] ?? [];
+        foreach ($cartst as $id =>$cart) {
+            $order_detail = [
+                'order_id' => $order_id,
+                'product_id' => $id,
+                'price' => $cart['price'],
+                'quantity' => $cart['quantity'],
+            ];
+            (new Order)->createOrderDetail($order_detail);
+        }
+
+        $_SESSION['last'] = $_SESSION['carts'];
+
+        $this->clearCart();
+
+        return header("location: " . ROOT_URL . '?ctl=success');
+    }
+    public function clearCart()
+    {
+        unset($_SESSION['carts']);
+        unset($_SESSION['totalQuantity']);
+        unset($_SESSION['URI']);
     }
     public function success()
     {
-        if (!isset($_SESSION['user']))
-        {
-            return header("location: " . ROOT_URL . '?ctl=login');
-        }
-        
-        $user = $_SESSION['user'];
-        $cartst = $_SESSION['carts'] ?? [];
-        $sumPrice = $this->totalPriceInCart();
-        return view("clients.carts.success",compact('user','cartst','sumPrice'));
+        $user = $_SESSION['user'] ?? null;
+        $carts = $_SESSION['last'] ?? [];
+        $sumPrice = $this->totalPriceInCart(); 
+        return view("clients.carts.success", compact('user', 'carts', 'sumPrice'));
     }
 }

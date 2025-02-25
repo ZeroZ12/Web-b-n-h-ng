@@ -1,6 +1,6 @@
 <?php
 
-class AutherController
+class AutherController 
 {
     public function register()
     {
@@ -83,7 +83,7 @@ class AutherController
     {
         $data = $_POST;
         $data['active'] = $data['active'] ? 0 : 1;
-        (new User)->update($data['id'], $data['active']);
+        (new User)->updateActive($data['id'], $data['active']);
         return header('location: ' . ADMIN_URL . '?ctl=listuser');
     }
 }

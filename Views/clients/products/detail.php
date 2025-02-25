@@ -15,8 +15,8 @@
             </a>
             /
             <span>
-            <?= $product['name'] ?>            
-        </span>
+                <?= $product['name'] ?>
+            </span>
         </nav>
         <div class="flex flex-col lg:flex-row bg-white p-4 rounded shadow">
             <div class="lg:w-1/3">
@@ -37,8 +37,8 @@
             </div>
             <div class="lg:w-2/3 lg:pl-8">
                 <h1 class="text-xl font-bold mb-2">
-                <?= $product['name'] ?>                
-            </h1>
+                    <?= $product['name'] ?>
+                </h1>
                 <div class="flex items-center mb-2">
                     <span class="text-yellow-500 text-lg">
                         <i class="fas fa-star">
@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div class="text-red-600 text-3xl font-bold mb-2">
-                <?= number_format($product['price']) ?>đ
+                    <?= number_format($product['price']) ?>đ
                 </div>
                 <div class="text-gray-500 line-through mb-2">
                     12.520.000đ
@@ -89,9 +89,9 @@
                     </div>
                 </div>
                 <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>">
-                <button class="bg-red-600 text-white text-lg font-bold py-2 px-4 rounded w-full mb-4">
-                    MUA NGAY
-                </button>
+                    <button class="bg-red-600 text-white text-lg font-bold py-2 px-4 rounded w-full mb-4">
+                        THÊM VÀO GIỎ HÀNG
+                    </button>
                 </a>
                 <div class="text-center text-sm text-gray-500 mb-4">
                     Giao hàng tận nơi hoặc nhận tại cửa hàng
@@ -136,7 +136,7 @@
         <div class="max-w-4xl mx-auto p-4">
             <h1 class="text-lg font-bold mb-4">Giới thiệu về <?= $product['name'] ?></h1>
             <div>
-            <?= $product['description'] ?>
+                <?= $product['description'] ?>
             </div>
             <h1 class="text-lg font-bold mb-4">Đánh giá & Nhận xét <?= $product['name'] ?></h1>
             <div class="flex items-center mb-4">
@@ -153,51 +153,63 @@
                 </div>
             </div>
             <div class="space-y-2">
-                <div class="flex items-center">
-                    <span class="text-gray-700">5</span>
-                    <i class="fas fa-star text-yellow-500 ml-1"></i>
-                    <div class="w-full bg-gray-200 h-2 ml-2 rounded">
-                        <div class="bg-gray-300 h-2 rounded" style="width: 0%;"></div>
+                <div class="col-md-6">
+                    <div id="reviews">
+                        <?php foreach ($comments as $comment): ?>
+                            <ul class="reviews">
+                                <li>
+                                    <div class="review-heading">
+                                        <h5 class="name"><?= $comment['fullname'] ?></h5>
+                                        <p class="date"><?= date('d-m-Y H:i:s', strtotime($comment['created_at'])) ?></p>
+                                    </div>
+                                    <div class="review-body">
+                                        <p><?= $comment['content'] ?></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        <?php endforeach ?>
+
                     </div>
-                    <span class="ml-2 text-blue-500 cursor-pointer">Đánh giá</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-gray-700">4</span>
-                    <i class="fas fa-star text-yellow-500 ml-1"></i>
-                    <div class="w-full bg-gray-200 h-2 ml-2 rounded">
-                        <div class="bg-gray-300 h-2 rounded" style="width: 0%;"></div>
-                    </div>
-                    <span class="ml-2 text-blue-500 cursor-pointer">Đánh giá</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-gray-700">3</span>
-                    <i class="fas fa-star text-yellow-500 ml-1"></i>
-                    <div class="w-full bg-gray-200 h-2 ml-2 rounded">
-                        <div class="bg-gray-300 h-2 rounded" style="width: 0%;"></div>
-                    </div>
-                    <span class="ml-2 text-blue-500 cursor-pointer">Đánh giá</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-gray-700">2</span>
-                    <i class="fas fa-star text-yellow-500 ml-1"></i>
-                    <div class="w-full bg-gray-200 h-2 ml-2 rounded">
-                        <div class="bg-gray-300 h-2 rounded" style="width: 0%;"></div>
-                    </div>
-                    <span class="ml-2 text-blue-500 cursor-pointer">Đánh giá</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-gray-700">1</span>
-                    <i class="fas fa-star text-yellow-500 ml-1"></i>
-                    <div class="w-full bg-gray-200 h-2 ml-2 rounded">
-                        <div class="bg-gray-300 h-2 rounded" style="width: 0%;"></div>
-                    </div>
-                    <span class="ml-2 text-blue-500 cursor-pointer">Đánh giá</span>
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <form action="" method="post">
+                            <textarea name="content" rows="3" cols="60" require id="content" placeholder="Đóng góp bình luận của bạn nhé"></textarea>
+                            <br>
+                            <button type="submit">Gửi</button>
+                        </form>
+                    <?php else: ?>
+                        <div>Bạn cần <b><a href="<?= ROOT_URL . '?ctl=login' ?>"></a></b> để bình luận</div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="mt-6">
                 <button class="bg-blue-500 text-white py-2 px-4 rounded">Gửi đánh giá của bạn</button>
             </div>
         </div>
+        <div class="relative">
+            <div class="swiper laptopSwiper">
+                <h2 class="mt-5">Các sản phẩm liên quan</h2>
+                <div class="swiper-wrapper">
+                    <?php foreach ($productReleads as $pro) : ?>
+                        <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <img class="w-full h-48 object-cover mb-4" src="<?= $pro['image'] ?>" alt="" />
+                            <h3 class="text-lg font-bold">
+                                <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pro['id'] ?>" class="btn btn-outline-success">
+                                    <h5 class="product-name"><?= $pro['name'] ?></h5>
+                                </a>
+                            </h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-red-500"><span class="product-price"><?= number_format($pro['price']) ?> đ</span></span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
+                                <span class="text-gray-500">(1 đánh giá)</span>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Footer -->

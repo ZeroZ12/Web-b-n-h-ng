@@ -40,7 +40,21 @@ class Order extends BaseModel
 
         return $this->conn->lastInsertId(); // Return the inserted order ID
     }
-
+    public function createOrderDetail($data)
+    {
+        $sql = "INSERT INTO order_details (order_id, product_id, price, quantity) 
+                VALUES (:order_id, :product_id, :price, :quantity)";
+        
+        $stmt = $this->conn->prepare($sql);
+        
+        $stmt->execute([
+            ':order_id' => $data['order_id'],
+            ':product_id' => $data['product_id'],
+            ':price' => $data['price'],
+            ':quantity' => $data['quantity'],
+        ]);
+        
+    }
     public function updateStatus($id, $status)
     {
         $sql = "UPDATE orders SET status = :status WHERE id = :id";
@@ -50,19 +64,7 @@ class Order extends BaseModel
             ':status' => $status,
         ]);
     }
-
-    public function createOrderDetail($data)
-    {
-        $sql = "INSERT INTO order_details (order_id, product_id, price, quantity) 
-                VALUES (:order_id, :product_id, :price, :quantity)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([
-            ':order_id' => $data['order_id'],
-            ':product_id' => $data['product_id'],
-            ':price' => $data['price'],
-            ':quantity' => $data['quantity'],
-        ]);
-    }
+    
     // danh sách sản phẩm của hóa đơn  $id : mã hóa đơn
     public function listOrderDetail($id)
     {

@@ -215,63 +215,7 @@
         },
         loop: true,
     });
-  // document.addEventListener("DOMContentLoaded", function () {
-  //       // Giảm số lượng
-  //      document.querySelectorAll(".quantity-decrease").forEach(button => {
-  //       button.addEventListener("click", function () {
-  //         let id = this.getElementById("data-id");
-  //         let input = document.querySelector(`.quantity-input[data-id='${id}']`);
-  //         let value = parseInt(input.value);
-
-  //         if (value>1) {
-  //           input.value = value-1;
-  //           updateQuantity(id, input.value);
-  //         }
-  //       });
-  //      });
-
-  //      document.querySelectorAll(".quantity-increase").forEach(button => {
-  //       button.addEventListener("click", function () {
-  //         let id = this.getElementById("data-id");
-  //         let input = document.querySelector(`.quantity-input[data-id='${id}']`);
-  //         let value = parseInt(input.value);
-
-  //           input.value = value+1;
-  //           updateQuantity(id, input.value);
-  //       });
-  //      });
-
-  //      document.querySelectorAll(".quantity-input").forEach(button => {
-  //       button.addEventListener("change", function () {
-  //         let id = this.getElementById("data-id");
-  //         let value = parseInt(input.value);
-
-  //         if (value<1 || isNaN(value)) {
-  //           input.value = 1;
-  //           value = 1;
-            
-  //         }
-  //         updateQuantity(id,value);
-  //       });
-  //      });
-
-  //      function updateQuantity(productId, quantity) {
-  //       fetch("<?= ROOT_URL ?> ?ctl=update-cart", {
-  //         method: "POST",
-  //         headers: {"Content-Type" : "application/x-www-form-urlencoded"},
-  //         body: `id=${productId}&quantity=${quantity}`
-  //       })
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         if (data.success) {
-  //           document.querySelector(`#product-total-${productId}`).innerText = data.subtotal + "đ";
-
-  //           document.querySelector("#cart-total").innerText = data.total + "đ";
-  //         }
-  //       })
-  //       .catch(error => console.error("Lỗi cập nhật giỏ hàng:", error));
-  //      }
-  //   });
+  
 </script>
 </body>
 

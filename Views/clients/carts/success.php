@@ -1,3 +1,4 @@
+
 <?php include_once ROOT_DIR . "./Views/clients/header.php" ?>
 
 <div class="max-w-4xl mx-auto p-4">
@@ -28,28 +29,33 @@
         <div class="w-1/3 pl-4">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <div class="flex items-center">
-                <?php foreach ($cartst as $id => $carts) : ?>
-                    <img alt="<?= $carts['name'] ?>" class="w-12 h-12" src="<?= $carts['image'] ?>" />
-                    <div class="ml-4">
-                        <p class="text-gray-600"><?= $carts['name'] ?></p>
+                    <?php if (!empty($carts)) : ?>
+                        <?php foreach ($carts as $id => $cart) : ?>
+                            <img alt="<?= $cart['name'] ?>" class="w-12 h-12" src="<?= $cart['image'] ?>" />
+                            <div class="ml-4">
+                                <p class="text-gray-600"><?= $cart['name'] ?></p>
+                            </div>
+                        <?php endforeach; ?>
                         <p class="text-gray-600"><?= number_format($sumPrice) ?>đ</p>
-                    </div>
+                        
+                    <?php else : ?>
+                        <p class="text-gray-500">Giỏ hàng trống.</p>
+                    <?php endif; ?>
                 </div>
-                <?php endforeach; ?>
-                <div class="mt-4">
-                    <div class="flex justify-between">
-                        <p class="text-gray-600">Tạm tính</p>
-                        <p class="text-gray-600"><?= number_format($sumPrice) ?>đ</p>
-                    </div>
-                    <div class="flex justify-between mt-2">
-                        <p class="text-gray-600">Phí vận chuyển</p>
-                        <p class="text-gray-600">Miễn phí</p>
-                    </div>
-                    <div class="flex justify-between mt-4 font-semibold">
-                        <p class="text-gray-600">Tổng cộng</p>
-                        <p class="text-gray-600">VND <?= number_format($sumPrice) ?>đ</p>
-                    </div>
+            <div class="mt-4">
+                <div class="flex justify-between">
+                    <p class="text-gray-600">Tạm tính</p>
+                    <p class="text-gray-600"><?= number_format($sumPrice) ?>đ</p>
                 </div>
+                <div class="flex justify-between mt-2">
+                    <p class="text-gray-600">Phí vận chuyển</p>
+                    <p class="text-gray-600">Miễn phí</p>
+                </div>
+                <div class="flex justify-between mt-4 font-semibold">
+                    <p class="text-gray-600">Tổng cộng</p>
+                    <p class="text-gray-600">VND <?= number_format($sumPrice) ?>đ</p>
+                </div>
+            </div>
             </div>
         </div>
     </div>

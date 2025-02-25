@@ -25,3 +25,14 @@ function session_flash($key)
     unset($_SESSION[$key]);
     return $message;
 }
+
+function getOrderStatus($status)
+{
+    $status_details = [
+        1 => 'Chờ xử lý',
+        2 => 'Đang xử lý',
+        3 => 'Hoàn thành',
+        4 => 'Đã hủy'
+    ];
+    return $status_details[$status];
+}

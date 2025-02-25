@@ -21,8 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input class="px-4 py-2 border rounded" placeholder="Tìm kiếm tại đây" type="text" />
                 <i class="fas fa-bell text-xl"></i>
                 <div class="flex items-center space-x-2">
-                    <img alt="User avatar" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/W7a2d_Y11w4nPJfoB1x7lgF932871k3mbw_TSFTZlCk.jpg" width="40" />
-                    <span>Thành viên</span>
+                    <img alt="User avatar" class="w-10 h-10 rounded-full" height="40" src="https://d3la0uqcqx40x5.cloudfront.net/wp-content/uploads/2022/03/Gundam-game-quiz-page-will-recommend-titles-like-Extreme-Vs-Maxiboost-ON.jpg" width="40" />
+                    <span>Hello <?= $_SESSION['user']['fullname'] ?? '' ?>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
+                    <?php endif ?></span>
                 </div>
             </div>
         </div>
