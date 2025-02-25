@@ -1,1 +1,32 @@
 <?php
+
+class OrderController
+{
+    public function index()
+    {
+        $orders = (new Order)->all();
+        return view("admin.order.list", compact('orders'));
+    }
+    public function show()
+    {
+        $id = $_GET['id'];
+        $message = "";
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $status = $_POST['status'];
+            (new Order)->updateStatus($id, $status);
+            $message = "Cập nhật thành công";
+        }
+        $order = (new Order)->find($id);
+        $order_details = (new Order)->listOrderDetail($id);
+        $status = (new Order)->status_details;
+        return view("admin.order.detail", compact('order','order_details','status','message'));
+    }
+    public function showUser()
+    {
+        $user_id = $_SESSION['user']['id'];
+        $orders = (new Order)->findOrderUser($user_id);
+        $user = $_SESSION['user'];
+        $categories = (new Category)->all();
+        return view("clients.user.order", compact('orders','user','categories'));
+    }
+}

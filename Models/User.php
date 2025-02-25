@@ -52,4 +52,11 @@ class User extends BaseModel
         $data['id'] = $id;
         $stmt->execute($data);
     }
+
+    public function updateActive($id, $active)
+    {
+        $sql = "UPDATE users SET active=:active WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id, 'active'=>$active]);
+    }
 }

@@ -12,15 +12,6 @@
           </li>
           <li>
             <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-gamepad">
-              </i>
-              <span>
-                Laptop Gaming
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
               <i class="fas fa-desktop">
               </i>
               <span>
@@ -61,15 +52,6 @@
               </i>
               <span>
                 Bàn phím
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-mouse">
-              </i>
-              <span>
-                Chuột &amp; Lót chuột
               </span>
             </a>
           </li>

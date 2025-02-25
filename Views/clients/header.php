@@ -18,8 +18,64 @@
     .navbar {
       height: 75px;
     }
+    /* Styling for the form */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the search input */
+.input-field {
+    width: 80%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #4CAF50; /* Green color when focused */
+}
+
+/* Styling for the search button */
+.search-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #45a049;
+}
+
+.search-button i {
+    margin: 0;
+}
+
+/* Additional styling for button on focus */
+.search-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
 <body class="bg-gray-100">
@@ -67,13 +123,13 @@
         </nav>
       </div>
       <div class="flex items-center space-x-4">
-        <form>
+        <form class="search-form">
           <input class="input" style="color: black; background-color: white;" class="px-4 py-2 rounded-md" placeholder="Bạn cần tìm gì?" type="search" aria-label="Search" id="keyword" />
-          <button type="button" id="btnSearch" class="fas fa-search">
-          </button>
+          <button type="button" id="btnSearch" class="fas fa-search"></button>
         </form>
         <a href="<?= ROOT_URL . '?ctl=view-cart' ?>">
           <i class="fas fa-shopping-cart">
+             <?= $_SESSION['totalQuantity'] ?? '0' ?>
           </i>
         </a>
 

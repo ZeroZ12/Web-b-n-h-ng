@@ -167,6 +167,7 @@
     </div>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
   btnSearch = document.getElementById('btnSearch')
   keyword = document.getElementById('keyword');
@@ -181,7 +182,39 @@
       event.preventDefault();
     }
   })
+  
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4, // Hiển thị 4 sản phẩm
+        spaceBetween: 20,
+        autoHeight: true, // Khoảng cách giữa các sản phẩm
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        loop: true, // Lặp vô hạn
+    });
 
+    var pcSwiper = new Swiper(".pcComponentsSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        autoHeight: true,
+        navigation: {
+            nextEl: ".pc-next",
+            prevEl: ".pc-prev",
+        },
+        loop: true,
+    });
+
+    var laptopSwiper = new Swiper(".laptopSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        autoHeight: true,
+        navigation: {
+            nextEl: ".laptop-next",
+            prevEl: ".laptop-prev",
+        },
+        loop: true,
+    });
   // document.addEventListener("DOMContentLoaded", function () {
   //       // Giảm số lượng
   //      document.querySelectorAll(".quantity-decrease").forEach(button => {

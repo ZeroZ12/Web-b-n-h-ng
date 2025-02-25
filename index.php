@@ -31,6 +31,8 @@ match ($ctl) {
     'delete-cart' => (new CartController)->delete(),
     'update-cart' => (new CartController)->update(),
     'search' => (new SearchController)->search(),
-    'view-checkout' => (new CartController)->viewCheck(),
+    'view-check' => (new CartController)->viewCheck(),
+    'check' => (new CartController)->check(),
+    'success' => (new CartController)->success(),
     default => view( 'errors.404'),
 };

@@ -27,7 +27,7 @@
         <div class="bg-white p-8 rounded-lg shadow-lg">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-800">
-                    DANH SÁCH NHÓM SẢN PHẨM
+                    DANH SÁCH DANH MỤC SẢN PHẨM
                 </h2>
                 <a href="<?= ADMIN_URL . '?ctl=adddm' ?>" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition duration-300">
                     + Thêm mới
@@ -46,7 +46,7 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="border p-3 text-sm font-semibold text-gray-700">Tên nhóm sản phẩm</th>
+                        <th class="border p-3 text-sm font-semibold text-gray-700">Tên danh mục sản phẩm</th>
                         <th class="border p-3 text-sm font-semibold text-gray-700">Ảnh</th>
                         <th class="border p-3 text-sm font-semibold text-gray-700">Loại sản phẩm</th>
                         <th class="border p-3 text-sm font-semibold text-gray-700">Thao tác</th>

@@ -12,22 +12,10 @@
     </div>
     <div class="bg-white p-4 rounded shadow">
         <h2 class="text-xl font-bold mb-4">Cập Nhật người dùng</h2>
-        <div class="flex justify-between items-center mb-4">
-            <div class="flex space-x-4">
-                <select class="border p-2">
-                    <option>Chọn tình trạng</option>
-                </select>
-                <input type="text" placeholder="Nhập tên sản phẩm" class="border p-2">
-            </div>
-            <div class="flex space-x-4">
-                <button class="bg-gray-200 px-4 py-2 rounded">Tất cả trạng thái</button>
-                <button class="bg-orange-500 text-white px-4 py-2 rounded">Lưu trữ</button>
-            </div>
-        </div>
         <table class="w-full text-left border-collapse">
             <thead>
                 <tr class="bg-gray-200">
-                    <th class="p-2 border">Tên sản phẩm</th>
+                    <th class="p-2 border">Name</th>
                     <th class="p-2 border">Ảnh sản phẩm</th>
                     <th class="p-2 border">Giá sản phẩm</th>
                     <th class="p-2 border">Số lượng sản phẩm</th>

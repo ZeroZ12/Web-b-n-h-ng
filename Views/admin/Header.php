@@ -38,14 +38,14 @@
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="<?= ADMIN_URL . '?ctl=listorder' ?>">
                             <i class="fas fa-shopping-cart mr-2">
                                 Đơn Hàng
                             </i>
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="<?= ADMIN_URL . '?ctl=listuser' ?>">
                             <i class="fas fa-users mr-2">
                                 Thành Viên
                             </i>
@@ -58,13 +58,13 @@
                             </i>
                         </a>
                         <ul class="ml-4 mt-2">
-                            <li class="mb-2">
+                            <!-- <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
                                     <i class="fas fa-list mr-2">
                                         Danh Sách Thuộc Tính
                                     </i>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
                                     <i class="fas fa-tags mr-2">
@@ -82,7 +82,7 @@
                             <li class="mb-2">
                                 <a class="flex items-center p-2 hover:bg-blue-700 rounded nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">
                                     <i class="fas fa-layer-group mr-2">
-                                        Nhóm Sản Phẩm
+                                        Danh Sách Danh Mục
                                     </i>
                                 </a>
                             </li>

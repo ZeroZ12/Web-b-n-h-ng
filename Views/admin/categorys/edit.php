@@ -7,20 +7,20 @@
         </div>
     <?php endif; ?>
 
-    <h2 class="text-2xl font-bold text-gray-800 mb-6">Cập Nhật Nhóm Sản Phẩm</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Cập Nhật Danh Sản Phẩm</h2>
 
     <form action="<?= ADMIN_URL . '?ctl=updatedm' ?>" method="post">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Tên nhóm sản phẩm -->
             <div>
-                <label class="block text-gray-700 font-medium mb-2">Tên nhóm sản phẩm (*)</label>
+                <label class="block text-gray-700 font-medium mb-2">Tên danh sản phẩm (*)</label>
                 <input type="text" name="cate_name" value="<?= htmlspecialchars($category['cate_name']) ?>" 
                        class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300" required>
             </div>
 
             <!-- Loại sản phẩm -->
             <div>
-                <label class="block text-gray-700 font-medium mb-2">Mô tả nhóm sản phẩm</label>
+                <label class="block text-gray-700 font-medium mb-2">Mô tả danh mục sản phẩm</label>
                 <div class="flex items-center space-x-4">
                     <label class="flex items-center space-x-2">
                         <input type="radio" name="type" value="1" 

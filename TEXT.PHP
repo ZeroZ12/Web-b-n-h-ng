@@ -1,5 +1,6 @@
+<form action="<?= ROOT_URL . '?ctl=update-cart' ?>" method="post"></form>
 <div class="giohang bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl">
-    <a href="#" class="text-blue-600 text-sm mb-4 inline-block">&lt; Mua thêm sản phẩm khác</a>
+    <a href="<?= ROOT_URL ?>" class="text-blue-600 text-sm mb-4 inline-block">&lt; Mua thêm sản phẩm khác</a>
     <div class="bg-red-50 p-4 rounded-lg mb-6">
         <div class="flex items-center justify-between">
             <div class="flex items-center">
@@ -60,12 +61,7 @@
 
                                 <div class="ml-4 flex items-center border rounded">
                                     <td>
-                                        <div class="ml-4 flex items-center border rounded">
-                                            <button type="button" class="px-2 quantity-decrease" data-id="<?= $id ?>">-</button>
-                                            <input type="number" name="quantity[<?= $id ?>]" class="form-control text-center border-l border-r quantity-input"
-                                                data-id="<?= $id ?>" value="<?= $carts['quantity'] ?>" min="1" style="width: 80px;">
-                                            <button type="button" class="px-2 quantity-increase" data-id="<?= $id ?>">+</button>
-                                        </div>
+                                        <input type="number" name="quantity[<?= $id ?>" value="<?= $carts['quantity'] ?>" min="1">
                                     </td>
                                 </div>
                             </div>

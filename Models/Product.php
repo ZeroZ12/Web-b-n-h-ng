@@ -2,9 +2,6 @@
 
 class Product extends BaseModel
 {
-    /**
-     * hàm all để lấy ra tất cả sản phẩm
-     */
     public function all()
     {
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id";
@@ -23,7 +20,7 @@ class Product extends BaseModel
      * Hàm lấy ra các sản phẩm là LAPTOPGAMING
      * được xác định bởi thuộc tính type=1
      */
-    public function listProductLapGaming()
+    public function listProductLaptop()
     {
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE type=1 LIMIT 4";
         $stmt = $this->conn->prepare($sql);
@@ -37,6 +34,20 @@ class Product extends BaseModel
     public function listProductOtherLaptop()
     {
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE type=0 LIMIT 8";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function listPcComponent()
+    {
+        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ('PCs') LIMIT 10"; 
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function listPcComponents()
+    {
+        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ('Linh kiện PC') LIMIT 10"; 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
