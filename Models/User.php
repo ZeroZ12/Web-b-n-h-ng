@@ -53,7 +53,22 @@ class User extends BaseModel
         $data['id'] = $id;
         $stmt->execute($data);
     }
-
+    public function updateUser($id,$data)
+    {
+        $sql = "UPDATE users SET fullname=:fullname,phone=:phone,address=:address,email=:email WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        
+        $data['id'] = $id;
+        $stmt->execute($data);
+    }
+    public function updateUserA($id,$data)
+    {
+        $sql = "UPDATE users SET fullname=:fullname,phone=:phone,address=:address,email=:email,role=:role WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        
+        $data['id'] = $id;
+        $stmt->execute($data);
+    }
     public function updateActive($id, $active)
     {
         $sql = "UPDATE users SET active=:active WHERE id=:id";

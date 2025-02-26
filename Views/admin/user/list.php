@@ -68,7 +68,7 @@
                                     </button>
                                 <?php endif ?>
                             <?php endif ?>
-                            <a href="<?= ADMIN_URL . '?ctl=listsp' ?>">Chỉnh sửa</a>
+                            <a href="<?= ADMIN_URL . '?ctl=detailA' ?>">Chỉnh sửa</a>
                         </form>
                         
                     </td>
@@ -76,12 +76,6 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <div class="flex justify-between items-center mt-4">
-            <div class="flex space-x-2">
-                <button class="bg-gray-200 px-4 py-2 rounded">1</button>
-            </div>
-            <div class="text-gray-500">Showing 1 to 10 of 30 entries</div>
-        </div>
     </div>
 </div>
 

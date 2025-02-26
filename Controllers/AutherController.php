@@ -91,7 +91,6 @@ class AutherController
         (new User)->updateActive($data['id'], $data['active']);
         return header('location: ' . ADMIN_URL . '?ctl=listuser');
     }
-
     public function detailuser()
     {
         $user = $_SESSION['user'];
@@ -100,7 +99,86 @@ class AutherController
 
     public function updatedetailuser()
     {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $id = $_SESSION['user']['id'];
+            $fullname = $_POST['fullname'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $address = $_POST['address'] ?? '';
+            $phone = $_POST['phone'] ?? '';
+
+            $userMo = new User;
+
+            $exitUser = $userMo->findUserOfEmail($email);
+            if($exitUser && $exitUser['id'] != $id) {
+                $_SESSION['message'] = "Email này đã được sử dụng";
+                header("location: " . ROOT_URL . "?ctl=detai-luser");
+                exit();
+            }
+            
+            $dataU = [
+                'fullname' => $fullname,
+                'email' => $email,
+                'address' => $address,
+                'phone' => $phone
+            ];
+            $dataU['id'] = $id;
+            if($userMo->updateUser($id,$dataU)){
+                $_SESSION['message'] = "CẬP NHẬT THÀNH CÔNG";
+            } else {
+                $_SESSION['message'] = "Có lỗi xảy ra";
+            }
         
+            header("location: " . ROOT_URL . "?ctl=detail-user");
+            exit();
+        }
+        $_SESSION['message'] = "Có lỗi xảy ra";
+        header("location: " . ROOT_URL . "?ctl=detail-user");
+        exit();
+    }
+    public function userAdminDetail()
+    {
+        $user = $_SESSION['user'];
+        return view('admin.user.edit', compact('user'));
+    }
+    public function updatedetailuserA()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $id = $_SESSION['user']['id'];
+            $fullname = $_POST['fullname'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $role = $_POST['role'] ?? '';
+            $address = $_POST['address'] ?? '';
+            $phone = $_POST['phone'] ?? '';
+
+            $userMo = new User;
+
+            $exitUser = $userMo->findUserOfEmail($email);
+            if($exitUser && $exitUser['id'] != $id) {
+                $_SESSION['message'] = "Email này đã được sử dụng";
+                header("location: " . ROOT_URL . "?ctl=detail-user");
+                exit();
+            }
+            
+            $dataU = [
+                'id' => $id,
+                'fullname' => $fullname,
+                'email' => $email,
+                'role' => $role,
+                'address' => $address,
+                'phone' => $phone
+            ];
+
+            if($userMo->updateUser($id,$dataU)){
+                $_SESSION['message'] = "CẬP NHẬT THÀNH CÔNG";
+            } else {
+                $_SESSION['message'] = "Có lỗi xảy ra";
+            }
         
+            header("location: " . ROOT_URL . "?ctl=detail-user");
+            exit();
+        }
+        $_SESSION['message'] = "Có lỗi xảy ra";
+        header("location: " . ROOT_URL . "?ctl=detail-user");
+        exit();
     }
 }

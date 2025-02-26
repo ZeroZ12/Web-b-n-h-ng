@@ -40,6 +40,8 @@ match ($ctl) {
 
     'listuser' => (new AutherController)->index(),
     'updateuser' => (new AutherController)->update(),
+    'detailA' => (new AutherController)->userAdminDetail(),
+    'update-us' => (new AutherController)->updatedetailuserA(),
 
     'listorder' => (new OrderController)->index(),
     'detilorder' => (new OrderController)->show(),

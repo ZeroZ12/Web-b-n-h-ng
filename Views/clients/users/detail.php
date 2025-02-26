@@ -14,27 +14,12 @@
         <h2 class="text-xl font-semibold mb-6">
             Thông tin tài khoản
         </h2>
-        <form action="<?= ROOT_DIR . '?ctl=update-user' ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= ROOT_URL . '?ctl=update-user' ?>" method="post" enctype="multipart/form-data">
             <div class="mb-4">
                 <label class="block text-gray-700 mb-2">
                     Tên
                 </label>
                 <input name="fullname" class="w-full p-2 border border-gray-300 rounded" type="text" value="<?= $user['fullname'] ?>" />
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 mb-2">
-                    Giới tính
-                </label>
-                <!-- <div class="flex items-center">
-                    <input class="mr-2" id="male" name="gender" type="radio" />
-                    <label class="mr-4" for="male">
-                        Nam
-                    </label>
-                    <input class="mr-2" id="female" name="gender" type="radio" />
-                    <label for="female">
-                        Nữ
-                    </label>
-                </div> -->
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 mb-2">

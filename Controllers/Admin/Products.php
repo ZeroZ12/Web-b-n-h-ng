@@ -25,7 +25,6 @@ class Products
         return view('admin.product.list', compact('products', 'message'));
     }
 
-
     public function create()
     {
         $categories = (new Category)->all();
