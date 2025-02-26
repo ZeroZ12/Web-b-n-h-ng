@@ -2,15 +2,18 @@
 
         <ul class="space-y-2">
           <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-laptop">
-              </i>
-              <span>
-                Laptop
-              </span>
+            <a class="flex items-center space-x-2" href="index.php">
+              <li class="fas fa-laptop">
+                <?php foreach ($categories as $cate) : ?>
+              </li>
+              <li>
+              <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>">
+							  <?= $cate['cate_name'] ?></a>
+              </li>
+              <?php endforeach ?>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a class="flex items-center space-x-2" href="#">
               <i class="fas fa-desktop">
               </i>
@@ -63,7 +66,7 @@
                 Phụ kiện (Hub, sạc, cáp...)
               </span>
             </a>
-          </li>
+          </li> -->
           <li>
             <a class="flex items-center space-x-2" href="#">
               <i class="fas fa-tools">

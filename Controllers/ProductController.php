@@ -50,4 +50,13 @@ class ProductController
             'clients.products.detail', compact('product','categories','title','productReleads')
         );
     }
+    public function list()
+    {
+        $id = $_GET['id'];
+        $products = (new Product)->listProductInCategory($id);
+        $category_name = (new Category)->all();
+        $categories = (new Category)->all();
+        $title = $category_name;
+        return view('clients.detail', compact('products','category_name','title','categories'));
+    }
 }
