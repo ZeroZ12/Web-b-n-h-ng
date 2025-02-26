@@ -1,4 +1,4 @@
-
+<?php echo($sumPrice) ?>
 <?php include_once ROOT_DIR . "./Views/clients/header.php" ?>
 
 <div class="max-w-4xl mx-auto p-4">
@@ -36,17 +36,13 @@
                                 <p class="text-gray-600"><?= $cart['name'] ?></p>
                             </div>
                         <?php endforeach; ?>
-                        <p class="text-gray-600"><?= number_format($sumPrice) ?>đ</p>
+                        <p class="text-gray-600"><?= number_format($cart['price'] * $cart['quantity']) ?>đ</p>
                         
                     <?php else : ?>
                         <p class="text-gray-500">Giỏ hàng trống.</p>
                     <?php endif; ?>
                 </div>
             <div class="mt-4">
-                <div class="flex justify-between">
-                    <p class="text-gray-600">Tạm tính</p>
-                    <p class="text-gray-600"><?= number_format($sumPrice) ?>đ</p>
-                </div>
                 <div class="flex justify-between mt-2">
                     <p class="text-gray-600">Phí vận chuyển</p>
                     <p class="text-gray-600">Miễn phí</p>

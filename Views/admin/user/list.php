@@ -68,9 +68,9 @@
                                     </button>
                                 <?php endif ?>
                             <?php endif ?>
-
+                            <a href="<?= ADMIN_URL . '?ctl=listsp' ?>">Chỉnh sửa</a>
                         </form>
-                        <a href="<?= ADMIN_URL . '?ctl=listsp' ?>">Chỉnh sửa</a>
+                        
                     </td>
                     </tr>
                 <?php endforeach ?>

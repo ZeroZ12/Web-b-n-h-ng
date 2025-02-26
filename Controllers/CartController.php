@@ -149,7 +149,7 @@ class CartController
         }
 
         $_SESSION['last'] = $_SESSION['carts'];
-
+        $_SESSION['last_price'] = $sumPrice;
         $this->clearCart();
 
         return header("location: " . ROOT_URL . '?ctl=success');
@@ -164,7 +164,7 @@ class CartController
     {
         $user = $_SESSION['user'] ?? null;
         $carts = $_SESSION['last'] ?? [];
-        $sumPrice = $this->totalPriceInCart(); 
+        $sumPrice = $_SESSION['last_price'] ?? 0; 
         return view("clients.carts.success", compact('user', 'carts', 'sumPrice'));
     }
 }
