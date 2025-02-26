@@ -1,24 +1,10 @@
+
 <?php include_once ROOT_DIR . "Views/clients/header.php" ?>
 <!-- Main Content -->
 <main class="container mx-auto mt-4">
     <div class="grid grid-cols-12 gap-4">
         <!-- Sidebar -->
         <?php include_once ROOT_DIR . "Views/clients/sidebar.php" ?>
-        <!-- Main Section -->
-        <section class="col-span-10">
-            <div class="grid grid-cols-12 gap-4">
-                <!-- Main Banner -->
-                <div class="col-span-8">
-                    <img alt="Main Banner" class="w-full" src="https://file.hstatic.net/200000722513/file/thang_01_laptop_gaming_banner_web_slider_800x400.png" />
-                </div>
-                <!-- Right Banners -->
-                <div class="col-span-4 space-y-4">
-                    <img alt="Right Banner 1" class="w-full" src="https://file.hstatic.net/200000722513/file/thang_01_layout_web_-02.png" />
-                    <img alt="Right Banner 2" class="w-full" src="https://file.hstatic.net/200000722513/file/thang_01_layout_web_-03.png" />
-                </div>
-            </div>
-    </div>
-    </section>
     </div>
 </main>
 
@@ -27,7 +13,7 @@
 
     <div class="mb-8">
         <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold"><?= $category_name ?> bán chạy</h2>
+            <h2 class="text-xl font-bold"><?= $category_name[0]['cate_name'] ?> bán chạy</h2>
             <div class="flex items-center space-x-4">
                 <span class="text-red-500">Trả góp 0%</span>
                 <a class="text-blue-500" href="#">Xem tất cả</a>
