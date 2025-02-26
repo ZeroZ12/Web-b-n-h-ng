@@ -79,11 +79,28 @@ class AutherController
         return view('admin.user.list', compact('users'));
     }
 
+    public function detail($id)
+    {
+        $users = (new User)->find($id);
+        return view('clients.users.login', compact('users'));
+    }
     public function update()
     {
         $data = $_POST;
         $data['active'] = $data['active'] ? 0 : 1;
         (new User)->updateActive($data['id'], $data['active']);
         return header('location: ' . ADMIN_URL . '?ctl=listuser');
+    }
+
+    public function detailuser()
+    {
+        $user = $_SESSION['user'];
+        return view('clients.users.detail', compact('user'));
+    }
+
+    public function updatedetailuser()
+    {
+        
+        
     }
 }

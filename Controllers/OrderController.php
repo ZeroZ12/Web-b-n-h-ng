@@ -27,7 +27,7 @@ class OrderController
         $orders = (new Order)->findOrderUser($user_id);
         $user = $_SESSION['user'];
         $categories = (new Category)->all();
-        return view("clients.user.order", compact('orders','user','categories'));
+        return view("clients.users.order", compact('orders','user','categories'));
     }
     public function detail()
     {
@@ -36,8 +36,10 @@ class OrderController
             (new Order)->updateStatus($id,4);
         }
         $order = (new Order)->find($id);
+        $user = $_SESSION['user'];
         $order_details = (new Order)->listOrderDetail($id);
         $status = (new Order)->status_details;
-        return view("clients.user.detail", compact('order','order_details','status',));
+        return view("clients.users.list-order", compact('order','user','order_details','status',));
     }
+
 }

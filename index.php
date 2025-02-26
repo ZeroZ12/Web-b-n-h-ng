@@ -39,5 +39,7 @@ match ($ctl) {
     'success' => (new CartController)->success(),
     'list-order' => (new OrderController)->showUser(),
     'order-detail' => (new OrderController)->detail(),
+    'detail-user' => (new AutherController)->detailuser(),
+    'update-user' => (new AutherController)->updatedetailuser(),
     default => view( 'errors.404'),
 };

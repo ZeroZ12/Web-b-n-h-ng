@@ -215,6 +215,12 @@
         },
         loop: true,
     });
+
+    // JavaScript để hiện/ẩn menu dropdown -->
+
+    document.querySelector(".fas.fa-user").addEventListener("click", function() {
+        document.querySelector(".dropdown-menu").classList.toggle("hidden");
+    });
   
 </script>
 </body>

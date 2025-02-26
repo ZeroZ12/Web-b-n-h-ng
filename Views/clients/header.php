@@ -90,8 +90,6 @@
 
         <nav class="hidden md:flex space-x-4">
 
-
-
           <div class="flex items-center space-x-2">
             <i class="fas fa-truck">
             </i>
@@ -106,13 +104,16 @@
               Thu cũ đổi mới
             </span>
           </div>
-          <div class="flex items-center space-x-2">
+          <a href="<?= ROOT_URL . '?ctl=list-order' ?>">
+            <div class="flex items-center space-x-2">
             <i class="fas fa-camera">
             </i>
             <span>
               Tra cứu đơn hàng
             </span>
           </div>
+          </a>
+          
           <div class="flex items-center space-x-2">
             <i class="fas fa-shield-alt">
             </i>
@@ -135,11 +136,20 @@
 
         <i class="fas fa-user">
           <?= $_SESSION['user']['fullname'] ?? '' ?>
-          <?php if (isset($_SESSION['user'])) : ?>
-            <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
-          <?php else : ?>
-            <li><a href="<?= ROOT_URL . '?ctl=login' ?>">Đăng nhập</a></li>
-          <?php endif ?>
+          <ul class="dropdown-menu absolute hidden bg-white shadow-lg p-2 rounded mt-2">
+              <?php if (isset($_SESSION['user'])) : ?>
+            <li>
+              <a href="<?= ROOT_URL . '?ctl=logout' ?>" class="block px-4 py-2 text-red-500 hover:bg-gray-200">Đăng xuất</a>
+            </li>
+            <li>
+              <a href="<?= ROOT_URL . '?ctl=detail-user' ?>" class="block px-4 py-2 text-red-500 hover:bg-gray-200">TK</a>
+            </li>
+              <?php else : ?>
+            <li>
+              <a href="<?= ROOT_URL . '?ctl=login' ?>" class="block px-4 py-2 text-red-500 hover:bg-gray-200">Đăng nhập</a>
+            </li>
+              <?php endif ?>
+          </ul>
         </i>
       </div>
     </div>
