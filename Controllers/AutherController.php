@@ -127,9 +127,10 @@ class AutherController
             } else {
                 $_SESSION['message'] = "Có lỗi xảy ra";
             }
-        
+            
             header("location: " . ROOT_URL . "?ctl=detail-user");
             exit();
+           
         }
         $_SESSION['message'] = "Có lỗi xảy ra";
         header("location: " . ROOT_URL . "?ctl=detail-user");
@@ -137,48 +138,62 @@ class AutherController
     }
     public function userAdminDetail()
     {
-        $user = $_SESSION['user'];
+        if(!isset($_GET['id'])){
+            $_SESSION['mesage'] = "Không tìm thấy người dùng";
+            header("location: " . ROOT_URL . "?ctl=listuser");
+            exit();
+        }
+        $id = $_GET['id'];
+        $userMo = new User();
+        $user = $userMo->findUserById($id);
+        if(!$user){
+            $_SESSION['mesage'] = "Không tìm thấy người dùng";
+            header("location: " . ADMIN_URL . "?ctl=listuser");
+            exit();
+        }
         return view('admin.user.edit', compact('user'));
     }
     public function updatedetailuserA()
     {
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $id = $_SESSION['user']['id'];
+            $id = $_POST['id'];
             $fullname = $_POST['fullname'] ?? '';
             $email = $_POST['email'] ?? '';
             $role = $_POST['role'] ?? '';
             $address = $_POST['address'] ?? '';
             $phone = $_POST['phone'] ?? '';
+            $password = $_POST['password'] ?? '';
 
             $userMo = new User;
 
             $exitUser = $userMo->findUserOfEmail($email);
             if($exitUser && $exitUser['id'] != $id) {
                 $_SESSION['message'] = "Email này đã được sử dụng";
-                header("location: " . ROOT_URL . "?ctl=detail-user");
+                header("location: " . ADMIN_URL  . "?ctl=detail-user&id=" . $id);
                 exit();
             }
             
             $dataU = [
-                'id' => $id,
                 'fullname' => $fullname,
                 'email' => $email,
                 'role' => $role,
                 'address' => $address,
-                'phone' => $phone
+                'phone' => $phone,
+                'password' => $password
             ];
 
-            if($userMo->updateUser($id,$dataU)){
+            if($userMo->updateUserA($id,$dataU)){
                 $_SESSION['message'] = "CẬP NHẬT THÀNH CÔNG";
             } else {
                 $_SESSION['message'] = "Có lỗi xảy ra";
             }
-        
-            header("location: " . ROOT_URL . "?ctl=detail-user");
+            
+            header("location: " . ADMIN_URL  . "?ctl=listuser");
             exit();
         }
+
         $_SESSION['message'] = "Có lỗi xảy ra";
-        header("location: " . ROOT_URL . "?ctl=detail-user");
+        header("location: " . ADMIN_URL  . "?ctl=listuser");
         exit();
     }
 }

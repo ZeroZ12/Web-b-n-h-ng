@@ -20,19 +20,21 @@
         </nav>
         <div class="flex flex-col lg:flex-row bg-white p-4 rounded shadow">
             <div class="lg:w-1/3">
-                <img alt="Product Image" class="w-full mb-4" height="300"
+                <img id="mainImage" alt="Product Image" class="w-full mb-4" height="300"
                     src="<?= $product['image'] ?>"
                     width="300" />
+
+                <!-- Ảnh thumbnail -->
                 <div class="flex space-x-2">
-                    <img alt="Thumbnail 1" class="w-12 h-12 border" height="50"
+                    <img alt="Thumbnail 1" class="w-12 h-12 border cursor-pointer" height="50"
                         src="<?= $product['image'] ?>"
-                        width="50" />
-                    <img alt="Thumbnail 2" class="w-12 h-12 border" height="50"
+                        width="50" onclick="changeImage(this)" />
+                    <img alt="Thumbnail 2" class="w-12 h-12 border cursor-pointer" height="50"
                         src="<?= $product['image'] ?>"
-                        width="50" />
-                    <img alt="Thumbnail 3" class="w-12 h-12 border" height="50"
+                        width="50" onclick="changeImage(this)" />
+                    <img alt="Thumbnail 3" class="w-12 h-12 border cursor-pointer" height="50"
                         src="<?= $product['image'] ?>"
-                        width="50" />
+                        width="50" onclick="changeImage(this)" />
                 </div>
             </div>
             <div class="lg:w-2/3 lg:pl-8">
@@ -135,7 +137,7 @@
 
         <div class="max-w-4xl mx-auto p-4">
             <h1 class="text-lg font-bold mb-4">Giới thiệu về <?= $product['name'] ?></h1>
-            <div>
+            <div style="text-align: justify; line-height: 1.6;">
                 <?= $product['description'] ?>
             </div>
             <h1 class="text-lg font-bold mb-4">Đánh giá & Nhận xét <?= $product['name'] ?></h1>

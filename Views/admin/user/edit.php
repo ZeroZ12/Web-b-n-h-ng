@@ -1,19 +1,21 @@
+<!--  -->
 <?php include_once ROOT_DIR . "Views/admin/Header.php"; ?>
+<!-- Hiển thị thông báo -->
+<?php if (!empty($message)) : ?>
+    <div class="mb-4 p-3 text-green-700 bg-green-100 rounded-lg text-center">
+        <?= $message ?>
+    </div>
+<?php endif; ?>
 
 <div class="flex min-h-screen justify-center items-center bg-gray-100">
     <div class="w-full max-w-lg bg-white shadow-md rounded-lg p-8">
-        <!-- Hiển thị thông báo -->
-        <?php if (!empty($message)) : ?>
-            <div class="mb-4 p-3 text-green-700 bg-green-100 rounded-lg text-center">
-                <?= $message ?>
-            </div>
-        <?php endif; ?>
 
         <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">
             Cập Nhật Thông Tin Tài Khoản
         </h2>
 
-        <form action="<?= ROOT_URL . '?ctl=update-us' ?>" method="post" enctype="multipart/form-data" class="space-y-4">
+        <form action="<?= ADMIN_URL . '?ctl=update-us' ?>" method="post" class="space-y-4">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
             <!-- Họ và Tên -->
             <div>
                 <label class="block text-gray-700 font-medium mb-2">
@@ -28,6 +30,14 @@
                     Số điện thoại
                 </label>
                 <input name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200" type="tel" value="<?= htmlspecialchars($user['phone']) ?>" />
+            </div>
+
+            <!-- Mật khẩu -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">
+                    Mật khẩu
+                </label>
+                <input name="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200" type="text" value="<?= htmlspecialchars($user['password']) ?>" />
             </div>
 
             <!-- Vai trò (Role) -->

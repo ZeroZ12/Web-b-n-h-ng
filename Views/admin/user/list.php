@@ -68,7 +68,7 @@
                                     </button>
                                 <?php endif ?>
                             <?php endif ?>
-                            <a href="<?= ADMIN_URL . '?ctl=detailA' ?>">Chỉnh sửa</a>
+                            <a href="<?= ADMIN_URL . '?ctl=detailA&id=' . $user['id'] ?>">Chỉnh sửa</a>
                         </form>
                         
                     </td>

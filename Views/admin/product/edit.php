@@ -23,9 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="flex items-center space-x-2">
                     <img alt="User avatar" class="w-10 h-10 rounded-full" height="40" src="https://d3la0uqcqx40x5.cloudfront.net/wp-content/uploads/2022/03/Gundam-game-quiz-page-will-recommend-titles-like-Extreme-Vs-Maxiboost-ON.jpg" width="40" />
                     <span>Hello <?= $_SESSION['user']['fullname'] ?? '' ?>
-                    <?php if (isset($_SESSION['user'])) : ?>
-                        <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
-                    <?php endif ?></span>
+                        <?php if (isset($_SESSION['user'])) : ?>
+                            <li><a href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a></li>
+                        <?php endif ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -66,8 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="md:col-span-2">
                                 <label class="block mb-1">Mô tả sản phẩm</label>
-                                <input class="w-full px-4 py-2 border rounded" type="text" name="description" value="<?= $product['description'] ?>" />
+                                <textarea class="w-full px-4 py-2 border rounded" id="description" name="description"><?= htmlspecialchars($product['description']) ?></textarea>
                             </div>
+
                         </div>
                     </div>
                 </div>

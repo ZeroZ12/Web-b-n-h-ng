@@ -25,7 +25,13 @@ class User extends BaseModel
         $stmt->execute(['email' => $email]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
+    public function findUserById($id)
+    {
+        $sql = "SELECT * FROM users WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
     public function emailExists($email)
     {
         $sql = "SELECT COUNT(*) FROM users WHERE email = :email";
@@ -63,7 +69,7 @@ class User extends BaseModel
     }
     public function updateUserA($id,$data)
     {
-        $sql = "UPDATE users SET fullname=:fullname,phone=:phone,address=:address,email=:email,role=:role WHERE id=:id";
+        $sql = "UPDATE users SET fullname=:fullname,phone=:phone,address=:address,email=:email,role=:role,password=:password WHERE id=:id";
         $stmt = $this->conn->prepare($sql);
         
         $data['id'] = $id;
