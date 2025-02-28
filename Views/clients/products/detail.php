@@ -69,14 +69,19 @@
                         Xem đánh giá
                     </a>
                 </div>
-                <div class="text-red-600 text-3xl font-bold mb-2">
-                    <?= number_format($product['price']) ?>đ
-                </div>
-                <div class="text-gray-500 line-through mb-2">
-                    12.520.000đ
-                </div>
-                <div class="text-red-600 text-sm mb-4">
-                    -4%
+                <div class="flex justify-between items-center mt-4">
+                    <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
+                        <span class="text-gray-500 line-through mb-2">
+                            <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                        </span>
+                        <span class="text-red-600 text-3xl font-bold mb-2">
+                            <span class="product-price-sale"><?= number_format($product['price_sale']) ?> đ</span>
+                        </span>
+                    <?php else : ?>
+                        <span class="text-red-600 text-3xl font-bold mb-2">
+                            <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                        </span>
+                    <?php endif ?>
                 </div>
                 <div class="bg-red-100 p-4 rounded mb-4">
                     <div class="flex items-center mb-2">
@@ -154,6 +159,7 @@
                     <span class="text-gray-500">0 đánh giá & nhận xét</span>
                 </div>
             </div>
+            <hr>
             <div class="space-y-2">
                 <div class="col-md-6">
                     <div id="reviews">
@@ -170,21 +176,19 @@
                                 </li>
                             </ul>
                         <?php endforeach ?>
-
                     </div>
                     <?php if (isset($_SESSION['user'])): ?>
                         <form action="" method="post">
                             <textarea name="content" rows="3" cols="60" require id="content" placeholder="Đóng góp bình luận của bạn nhé"></textarea>
                             <br>
-                            <button type="submit">Gửi</button>
+                            <div class="mt-6">
+                                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Gửi</button>
+                            </div>
                         </form>
                     <?php else: ?>
-                        <div>Bạn cần <b><a href="<?= ROOT_URL . '?ctl=login' ?>"></a></b> để bình luận</div>
+                        <div>Bạn cần <b><a href="<?= ROOT_URL . '?ctl=login' ?>">Đăng nhập</a></b> để bình luận</div>
                     <?php endif; ?>
                 </div>
-            </div>
-            <div class="mt-6">
-                <button class="bg-blue-500 text-white py-2 px-4 rounded">Gửi đánh giá của bạn</button>
             </div>
         </div>
         <div class="relative">
@@ -200,9 +204,9 @@
                                 </a>
                             </h3>
                             <div class="flex justify-between items-center mt-4">
-                                <span class="text-red-500"><span class="product-price"><?= number_format($pro['price']) ?> đ</span></span>
+                                <span class="text-red-500 text-xl font-bold mb-2"><span class="product-price"><?= number_format($pro['price']) ?> đ</span></span>
                             </div>
-                            <div class="flex justify-between items-center mt-2">
+                            <div class="text-red-500 text-xl font-bold mb-2">
                                 <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
                                 <span class="text-gray-500">(1 đánh giá)</span>
                             </div>

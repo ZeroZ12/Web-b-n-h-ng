@@ -55,6 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <input class="w-full px-4 py-2 border rounded" type="number" name="price" value="<?= $product['price'] ?>" />
                             </div>
                             <div>
+                                <label class="block mb-1">Giá SALE sản phẩm</label>
+                                <input class="w-full px-4 py-2 border rounded" type="number" name="price_sale" value="<?= $product['price_sale'] ?>" />
+                            </div>
+                            <div>
                                 <label class="block mb-1">Số lượng sản phẩm</label>
                                 <input class="w-full px-4 py-2 border rounded" type="number" name="quantity" value="<?= $product['quantity'] ?>" />
                             </div>
@@ -64,6 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input class="mr-2" type="radio" name="status" value="1" <?= $product['status'] ? 'checked' : '' ?> /> Đang kinh doanh
                                     <input class="ml-4 mr-2" type="radio" name="status" value="0" <?= $product['status'] == 0 ? 'checked' : '' ?> /> Ngừng kinh doanh
                                 </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">Is Sale?</label>
+                                <input class="w-full px-4 py-2 border rounded" type="checkbox" name="is_sale" value="1" id="is_sale" <?= $product['is_sale'] ? 'checked' : '' ?>/>
                             </div>
                             <div class="md:col-span-2">
                                 <label class="block mb-1">Mô tả sản phẩm</label>

@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="<?= ADMIN_URL . '?ctl=status-order' ?>">
                             <i class="fas fa-chart-bar mr-2">
                                 Thống Kê
                             </i>
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="">
                             <i class="fas fa-box mr-2">
                                 SẢN PHẨM
                             </i>
@@ -89,11 +89,17 @@
                         </ul>
                     </li>
                     <li class="mb-2">
-                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="<?= ADMIN_URL . '?ctl=product-comment' ?>">
                             <i class="fas fa-newspaper mr-2">
-                                Bài Viết
+                                Bình luận
                             </i>
-
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="<?= ROOT_URL ?>">
+                            <i class="fas fa-users mr-2">
+                                Quay lại trang cửa hàng
+                            </i>
                         </a>
                     </li>
                 </ul>

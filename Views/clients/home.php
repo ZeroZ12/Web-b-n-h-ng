@@ -30,7 +30,6 @@
 
 <div class="container mx-auto p-4">
     <!-- PC bán chạy Section -->
-
     <div class="mb-8">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl font-bold">PC bán chạy</h2>
@@ -53,9 +52,18 @@
                                 </a>
                             </h3>
                             <div class="flex justify-between items-center mt-4">
-                                <span class="text-red-500">
-                                    <span class="product-price"><?= number_format($product['price']) ?> đ</span>
-                                </span>
+                                <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
+                                    <span class="text-gray-500 line-through mb-2">
+                                        <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                    </span>
+                                    <span class="text-red-500 text-xl font-bold mb-2">
+                                        <span class="product-price-sale"><?= number_format($product['price_sale']) ?> đ</span>
+                                    </span>
+                                <?php else : ?>
+                                    <span class="text-gray-500 text-xl font-bold mb-2">
+                                        <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                    </span>
+                                <?php endif ?>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <span class="text-yellow-500">
@@ -78,81 +86,103 @@
         </div>
     </div>
     <!-- Linh kiện PC bán chạy -->
-<div class="mb-8">
-    <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-bold">Linh kiện PC bán chạy</h2>
-        <div class="flex items-center space-x-4">
-            <span class="text-red-500">Miễn phí giao hàng</span>
-            <a class="text-blue-500" href="#">Xem tất cả</a>
-        </div>
-    </div>
-
-    <div class="relative">
-        <div class="swiper pcComponentsSwiper">
-            <div class="swiper-wrapper">
-                <?php foreach ($pcComponents as $product) : ?>
-                    <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
-                        <img class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" alt="" />
-                        <h3 class="text-lg font-bold">
-                            <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
-                                <h5 class="product-name"><?= $product['name'] ?></h5>
-                            </a>
-                        </h3>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-red-500"><span class="product-price"><?= number_format($product['price']) ?> đ</span></span>
-                        </div>
-                        <div class="flex justify-between items-center mt-2">
-                            <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
-                            <span class="text-gray-500">(1 đánh giá)</span>
-                        </div>
-                    </div>
-                <?php endforeach ?>
+    <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Linh kiện PC bán chạy</h2>
+            <div class="flex items-center space-x-4">
+                <span class="text-red-500">Miễn phí giao hàng</span>
+                <a class="text-blue-500" href="#">Xem tất cả</a>
             </div>
         </div>
 
-        <!-- Nút điều hướng -->
-        <button class="swiper-button-prev pc-prev text-3xl text-gray-600"></button>
-        <button class="swiper-button-next pc-next text-3xl text-gray-600"></button>
-    </div>
-</div>
+        <div class="relative">
+            <div class="swiper pcComponentsSwiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($pcComponents as $product) : ?>
+                        <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <img class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" alt="" />
+                            <h3 class="text-lg font-bold">
+                                <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
+                                    <h5 class="product-name"><?= $product['name'] ?></h5>
+                                </a>
+                            </h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
+                                    <span class="text-gray-500 line-through mb-2">
+                                        <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                    </span>
+                                    <span class="text-red-500 text-xl font-bold mb-2">
+                                        <span class="product-price-sale"><?= number_format($product['price_sale']) ?> đ</span>
+                                    </span>
+                                <?php else : ?>
+                                    <span class="text-gray-500 text-xl font-bold mb-2">
+                                        <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                    </span>
+                                <?php endif ?>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
+                                <span class="text-gray-500">(1 đánh giá)</span>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
 
-<!-- Laptop gaming bán chạy -->
-<div class="mb-8">
-    <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-bold">Laptop gaming bán chạy</h2>
-        <div class="flex items-center space-x-4">
-            <span class="text-red-500">Miễn phí giao hàng</span>
-            <a class="text-blue-500" href="#">Xem tất cả</a>
+            <!-- Nút điều hướng -->
+            <button class="swiper-button-prev pc-prev text-3xl text-gray-600"></button>
+            <button class="swiper-button-next pc-next text-3xl text-gray-600"></button>
         </div>
     </div>
 
-    <div class="relative">
-        <div class="swiper laptopSwiper">
-            <div class="swiper-wrapper">
-                <?php foreach ($laptops as $laptop) : ?>
-                    <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
-                        <img class="w-full h-48 object-cover mb-4" src="<?= $laptop['image'] ?>" alt="" />
-                        <h3 class="text-lg font-bold">
-                            <a href="<?= ROOT_URL . '?ctl=detail&id=' . $laptop['id'] ?>" class="btn btn-outline-success">
-                                <h5 class="product-name"><?= $laptop['name'] ?></h5>
-                            </a>
-                        </h3>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-red-500"><span class="product-price"><?= number_format($laptop['price']) ?> đ</span></span>
-                        </div>
-                        <div class="flex justify-between items-center mt-2">
-                            <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
-                            <span class="text-gray-500">(1 đánh giá)</span>
-                        </div>
-                    </div>
-                <?php endforeach ?>
+    <!-- Laptop gaming bán chạy -->
+    <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Laptop gaming bán chạy</h2>
+            <div class="flex items-center space-x-4">
+                <span class="text-red-500">Miễn phí giao hàng</span>
+                <a class="text-blue-500" href="#">Xem tất cả</a>
             </div>
         </div>
 
-        <!-- Nút điều hướng -->
-        <button class="swiper-button-prev laptop-prev text-3xl text-gray-600"></button>
-        <button class="swiper-button-next laptop-next text-3xl text-gray-600"></button>
+        <div class="relative">
+            <div class="swiper laptopSwiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($laptops as $laptop) : ?>
+                        <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <img class="w-full h-48 object-cover mb-4" src="<?= $laptop['image'] ?>" alt="" />
+                            <h3 class="text-lg font-bold">
+                                <a href="<?= ROOT_URL . '?ctl=detail&id=' . $laptop['id'] ?>" class="btn btn-outline-success">
+                                    <h5 class="product-name"><?= $laptop['name'] ?></h5>
+                                </a>
+                            </h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <?php if (!empty($laptop['price_sale']) && $laptop['price_sale'] > 0) : ?>
+                                    <span class="text-gray-500 line-through mb-2">
+                                        <span class="laptop-price"><?= number_format($laptop['price']) ?> đ</span>
+                                    </span>
+                                    <span class="text-red-500 text-xl font-bold mb-2">
+                                        <span class="laptop-price-sale"><?= number_format($laptop['price_sale']) ?> đ</span>
+                                    </span>
+                                <?php else : ?>
+                                    <span class="text-gray-500 text-xl font-bold mb-2">
+                                        <span class="laptop-price"><?= number_format($laptop['price']) ?> đ</span>
+                                    </span>
+                                <?php endif ?>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
+                                <span class="text-gray-500">(1 đánh giá)</span>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
+
+            <!-- Nút điều hướng -->
+            <button class="swiper-button-prev laptop-prev text-3xl text-gray-600"></button>
+            <button class="swiper-button-next laptop-next text-3xl text-gray-600"></button>
+        </div>
     </div>
-</div>
 </div>
 <?php include_once ROOT_DIR . "Views/clients/footer.php";

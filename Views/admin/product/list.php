@@ -30,10 +30,11 @@
                     <th class="p-2 border">Tên sản phẩm</th>
                     <th class="p-2 border">Ảnh sản phẩm</th>
                     <th class="p-2 border">Giá sản phẩm</th>
+                    <th class="p-2 border">Sale</th>
                     <th class="p-2 border">Số lượng sản phẩm</th>
                     <th class="p-2 border">Tình trạng</th>
                     <th class="p-2 border">Danh mục</th>
-                    <th class="p-2 border"></th>
+                    <th class="p-2 border">IS_SALE?</th>
                     <th class="p-2 border">Điều chỉnh</th>
                 </tr>
             </thead>
@@ -44,10 +45,13 @@
                         <td class="p-2 border"><?= $pro['name'] ?></td>
                         <td class="p-2 border"><img src="<?= ROOT_URL . $pro['image'] ?>" width="60" alt=""></td>
                         <td class="p-2 border text-green-500"><?= $pro['price'] ?></td>
+                        <td class="p-2 border text-green-500"><?= $pro['price_sale'] ?></td>
                         <td class="p-2 border text-blue-500"><?= $pro['quantity'] ?></td>
                         <td class="p-2 border text-blue-500"><?= $pro['status'] ? 'Đang kinh doanh' : 'Ngừng kinh doanh' ?></td>
                         <td class="p-2 border text-blue-500"><?= $pro['cate_name'] ?></td>
-                        <td class="p-2 border"><input type="checkbox" checked></td>
+                        <td class="p-2 border">
+                            <input type="checkbox" <?= $pro['is_sale'] ? 'checked' : '' ?>>
+                        </td>
                         <td>
                             <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-primary">Sửa</a>
                             <a href="<?= ADMIN_URL . '?ctl=deletesp&id=' . $pro['id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không')">Xóa</a>

@@ -9,11 +9,12 @@ class Product extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function searchProductName($name){
+    public function searchProductName($name)
+    {
         $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE name LIKE '%$name%'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -40,16 +41,18 @@ class Product extends BaseModel
     }
     public function listPcComponent()
     {
-        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ('PCs') LIMIT 10"; 
+        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ('PCs') LIMIT 10";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function listPcComponents()
     {
-        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ('Linh kiện PC') LIMIT 10"; 
+        $categories = ['Linh kiện PC','Ram','Main','Ổ cứng','Card','CPU'];
+        $placeholders = implode(',', array_fill(0, count($categories), '?'));
+        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id WHERE cate_name IN ($placeholders) LIMIT 10";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($categories);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function listProductInCategory($id)
@@ -61,20 +64,47 @@ class Product extends BaseModel
     }
     public function create($data)
     {
-        $sql = "INSERT INTO products(name, image, price, quantity, description, status, category_id) VALUES(:name, :image, :price, :quantity, :description, :status, :category_id)";
+        $sql = "INSERT INTO products(name, image, price, price_sale, is_sale, quantity, description, status, category_id) 
+            VALUES(:name, :image, :price, :price_sale, :is_sale, :quantity, :description, :status, :category_id)";
 
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute([
+            'name' => $data['name'],
+            'image' => $data['image'],
+            'price' => $data['price'],
+            'price_sale' => $data['price_sale'] ?? null,
+            'is_sale' => $data['is_sale'] ?? 0,
+            'quantity' => $data['quantity'],
+            'description' => $data['description'],
+            'status' => $data['status'],
+            'category_id' => $data['category_id'],
+        ]);
     }
+
     public function update($id, $data)
     {
-        $sql = "UPDATE products SET name=:name, image=:image, price=:price, quantity=:quantity, description=:description, status=:status, category_id=:category_id WHERE id=:id";
+        $sql = "UPDATE products 
+            SET name=:name, image=:image, price=:price, price_sale=:price_sale, 
+                is_sale=:is_sale, quantity=:quantity, description=:description, 
+                status=:status, category_id=:category_id 
+            WHERE id=:id";
 
         $stmt = $this->conn->prepare($sql);
-        //Thêm id và mảngr data
-        $data['id'] = $id;
-        $stmt->execute($data);
+        $data['id'] = $id; // Gán ID vào mảng dữ liệu
+        $stmt->execute([
+            'id' => $id,
+            'name' => $data['name'],
+            'image' => $data['image'],
+            'price' => $data['price'],
+            'price_sale' => $data['price_sale'] ?? null,
+            'is_sale' => $data['is_sale'] ?? 0,
+            'quantity' => $data['quantity'],
+            'description' => $data['description'],
+            'status' => $data['status'],
+            'category_id' => $data['category_id'],
+        ]);
     }
+
     public function delete($id)
     {
         try {
@@ -105,5 +135,5 @@ class Product extends BaseModel
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id, 'category_id' => $category_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } 
+    }
 }

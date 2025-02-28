@@ -40,6 +40,12 @@ class Products
 
         $file = $_FILES['image'];
 
+        if(isset($data['price_sale']) && $data['price_sale'] !== '') {
+            $data['price_sale'] = (float) $data['price_sale'];
+        } else {
+            $data['price_sale'] = NULL;
+        }
+
         if ($file['size'] > 0) {
             $image = "images/" . $file['name'];
             //upload ảnh
@@ -47,6 +53,7 @@ class Products
         }
 
         $data['image'] = $image;
+
 
         (new Product)->create($data);
 
@@ -73,8 +80,6 @@ class Products
 
     public function update()
     {
-        session_start();
-
         $data = $_POST;
 
         $product = new Product;
@@ -84,6 +89,10 @@ class Products
         $image = $item['image'];
 
         $file = $_FILES['image'];
+
+        $data['price_sale'] = isset($_POST['price_sale']) && $_POST['price_sale'] !== ''
+            ? (float) $_POST['price_sale']
+            : NULL;
 
         if ($file['size'] > 0) {
             $image = "images/" . $file['name'];

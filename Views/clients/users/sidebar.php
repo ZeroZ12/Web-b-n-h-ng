@@ -8,30 +8,31 @@
             </p>
         </div>
     </div>
-    <ul>
         <li class="mb-4">
-            <a class="flex items-center text-gray-700" href="<?= ROOT_URL . '?ctl=detail-user' ?>">
+            <a class="items-center text-gray-700" href="<?= ROOT_URL . '?ctl=detail-user' ?>">
                 <i class="fas fa-user mr-2">
                 </i>
                 Thông tin tài khoản
             </a>
         </li>
         <li class="mb-4">
-            <a class="flex items-center text-gray-700" href="<?= ROOT_URL . '?ctl=list-order' ?>">
+            <a class="items-center text-gray-700" href="<?= ROOT_URL . '?ctl=list-order' ?>">
                 <i class="fas fa-box mr-2">
                 </i>
                 Quản lý đơn hàng
             </a>
         </li>
+        <?php if (!empty($user) && isset($user['role']) && $user['role'] == 'admin') : ?>
         <li class="mb-4">
-            <a class="flex items-center text-gray-700" href="#">
+            <a class="items-center text-gray-700" href="<?= ADMIN_URL ?>">
                 <i class="fas fa-eye mr-2">
                 </i>
-                Sản phẩm đã xem
+                Admin
             </a>
         </li>
+        <?php endif; ?>
         <li>
-            <a class="flex items-center text-gray-700" href="<?= ROOT_URL . '?ctl=logout' ?>">
+            <a class="items-center text-gray-700" href="<?= ROOT_URL . '?ctl=logout' ?>">
                 <i class="fas fa-sign-out-alt mr-2">
                 </i>
                 Đăng xuất

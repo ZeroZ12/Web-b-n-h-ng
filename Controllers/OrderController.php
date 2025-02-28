@@ -41,5 +41,9 @@ class OrderController
         $status = (new Order)->status_details;
         return view("clients.users.list-order", compact('order','user','order_details','status',));
     }
-
+    public function orderstast()
+    {
+        // $orders = (new Order)->all();
+        return view("admin.order.orderstats");
+    }
 }

@@ -11,6 +11,7 @@ require_once __DIR__ . "/../Models/Category.php";
 require_once __DIR__ . "/../Models/Product.php";
 require_once __DIR__ . "/../Models/User.php";
 require_once __DIR__ . "/../Models/Order.php";
+require_once __DIR__ . "/../Models/Comment.php";
 
 
 
@@ -20,6 +21,7 @@ require_once __DIR__ . "/../Controllers/Admin/Dashboards.php";
 require_once __DIR__ . "/../Controllers/Admin/Products.php";
 require_once __DIR__ . "/../Controllers/AutherController.php";
 require_once __DIR__ . "/../Controllers/OrderController.php";
+require_once __DIR__ . "/../Controllers/Admin/CommentController.php";
 
 $ctl = $_GET['ctl'] ?? "";
 
@@ -46,6 +48,10 @@ match ($ctl) {
 
     'listorder' => (new OrderController)->index(),
     'detilorder' => (new OrderController)->show(),
- 
+    'status-order' => (new OrderController)->orderstast(),
+
+    'product-comment' => (new CommentController)->index(),
+    'detail-comment' => (new CommentController)->list(),
+    'active-comment' => (new CommentController)->updateActive(),
     default =>view('errors.404'),
 };

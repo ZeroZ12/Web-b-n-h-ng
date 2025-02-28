@@ -11,7 +11,6 @@
     <div class="container mx-auto p-4">
         <section class="col-span-9">
             <!-- PC bán chạy Section -->
-
             <div class="mb-8">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold"><?= $category_name[0]['cate_name'] ?> bán chạy</h2>
@@ -34,9 +33,18 @@
                                         </a>
                                     </h3>
                                     <div class="flex justify-between items-center mt-4">
-                                        <span class="text-red-500">
-                                            <span class="product-price"><?= number_format($product['price']) ?> đ</span>
-                                        </span>
+                                        <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
+                                            <span class="text-gray-500 line-through mb-2">
+                                                <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                            </span>
+                                            <span class="text-red-500 text-xl font-bold mb-2">
+                                                <span class="product-price-sale"><?= number_format($product['price_sale']) ?> đ</span>
+                                            </span>
+                                        <?php else : ?>
+                                            <span class="text-red-500 text-xl font-bold mb-2">
+                                                <span class="product-price"><?= number_format($product['price']) ?> đ</span>
+                                            </span>
+                                        <?php endif ?>
                                     </div>
                                     <div class="flex justify-between items-center mt-2">
                                         <span class="text-yellow-500">
