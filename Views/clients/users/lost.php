@@ -1,40 +1,32 @@
 <?php include_once ROOT_DIR . "./Views/clients/header.php" ?>
 
+<?php if(isset($_GET['ctl']) && $_GET['ctl'] == 'updatepass') : ?>
+    <p>Mật khẩu đã đc cập nhật</p>
+<?php endif; ?>
+
+<?php if(isset($_GET['ctl']) && $_GET['ctl'] == 'updatefail') : ?>
+    <p>Email không tồn tại!</p>
+<?php endif; ?>
+
 
     <div class="signin bg-white p-6 rounded-lg shadow-lg w-full max-w-sm ">
-        <?php if ($message != '') : ?>
-
-            <div class="alert alert-success">
-                <?= $message ?>
-            </div>
-
-            <?php if ($error != '') : ?>
-
-                <div class="alert alert-danger">
-                    <?= $error ?>
-                </div>
-
-            <?php endif ?>
-        <?php endif ?>
         <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-semibold">ĐĂNG NHẬP</h2>
+            <h2 class="text-lg font-semibold">QUÊN MẬT KHẨU</h2>
             <button class="text-gray-500"><i class="fas fa-times"></i></button>
         </div>
-        <form action="<?= ROOT_URL . '?ctl=login' ?>" method="post">
+        <form action=" <?= ROOT_URL . '?ctl=updatepass'  ?>" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                 <input type="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             <div class="mb-4 relative">
-                <label for="password" class="block text-sm font-medium text-gray-700">Mật khẩu</label>
+                <label for="password" class="block text-sm font-medium text-gray-700">Mật khẩu mới</label>
                 <input type="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                    
                 </button>
             </div>
-            <div class="flex justify-end mb-4">
-                <a href=" <?= ROOT_URL . '?ctl=go' ?>" class="text-sm text-gray-500">Quên mật khẩu?</a>
-            </div>
-            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md text-sm font-semibold">ĐĂNG NHẬP</button>
+            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md text-sm font-semibold">TẠO MỚI MẬT KHẨU</button>
 
             <div class="flex items-center my-4">
                 <div class="flex-grow border-t border-gray-300"></div>

@@ -3,7 +3,7 @@ if (!isset($order) || empty($order)) {
     echo "Dữ liệu đơn hàng ko tồn tại";
     exit;
 }
-print_r($order);
+// print_r($order);
 $orderDate = !empty($order['created_at']) ? date('d-m-Y H:i:s', strtotime($order['created_at'])) : "Không xác định";
 $total = 0;
 ?>
@@ -39,7 +39,9 @@ $total = 0;
             <div class="flex justify-between items-center mb-4">
 
                 <h3 class="text-xl font-semibold">
+
                     Đơn hàng #<?= $order['id'] ?>
+                    
                 </h3>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
                     Lưu thông tin

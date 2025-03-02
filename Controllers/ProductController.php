@@ -8,6 +8,7 @@ class ProductController
 
         //lấy sản phẩm theo danh mục id
         $products = (new Product)->listProductInCategory($id);
+        $productcm = ( new Comment )->hasComment();
 
         //Lấy tên danh mục
         $title = $products[0]['cate_name'] ?? '';
@@ -19,7 +20,7 @@ class ProductController
 
         return view(
             'clients.category.category',
-            compact('products', 'categories', 'title')
+            compact('products','productcm', 'categories', 'title')
         );
     }
 

@@ -61,10 +61,10 @@
                     <p class="text-sm text-gray-600 mb-4">
                         Là phương thức khách hàng trả tiền mặt khi nhận hàng. Áp dụng với tất cả các đơn hàng trên toàn quốc.
                     </p>
-                    <label class="flex items-center mb-2" href="" for="bank">
+                    <!-- <label class="flex items-center mb-2" href="" for="bank">
                         <input id="bank" class="mr-2" name="payment_method" type="radio" value="BANK" required>
                         Thanh toán online qua tk ngân hàng
-                    </label>
+                    </label> -->
                 </div>
             </div>
 

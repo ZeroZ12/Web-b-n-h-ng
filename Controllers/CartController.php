@@ -162,6 +162,7 @@ class CartController
     }
     public function success()
     {
+
         $user = $_SESSION['user'] ?? null;
         $carts = $_SESSION['last'] ?? [];
         $sumPrice = $_SESSION['last_price'] ?? 0; 

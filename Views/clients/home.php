@@ -45,6 +45,11 @@
                 <div class="swiper-wrapper">
                     <?php foreach ($PCs as $product) : ?>
                         <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <?php if ($product['is_sale'] == '1') : ?>
+                                <span class="text-red-500 text-xl font-bold mb-2">Sale</span>
+                            <?php else : ?>
+                                <span class="badge bg-info">No Sale</span>
+                            <?php endif ?>
                             <img alt="" class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" />
                             <h3 class="text-lg font-bold">
                                 <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
@@ -69,7 +74,6 @@
                                 <span class="text-yellow-500">
                                     <i class="fas fa-star"></i> 5.0
                                 </span>
-                                <span class="text-gray-500">(1 đánh giá)</span>
                             </div>
                         </div>
                     <?php endforeach ?>
@@ -100,6 +104,11 @@
                 <div class="swiper-wrapper">
                     <?php foreach ($pcComponents as $product) : ?>
                         <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <?php if ($product['is_sale'] == '1') : ?>
+                                <span class="text-red-500 text-xl font-bold mb-2">Sale</span>
+                            <?php else : ?>
+                                <span class="badge bg-info">No Sale</span>
+                            <?php endif ?>
                             <img class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" alt="" />
                             <h3 class="text-lg font-bold">
                                 <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
@@ -122,7 +131,6 @@
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
-                                <span class="text-gray-500">(1 đánh giá)</span>
                             </div>
                         </div>
                     <?php endforeach ?>
@@ -150,6 +158,11 @@
                 <div class="swiper-wrapper">
                     <?php foreach ($laptops as $laptop) : ?>
                         <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                            <?php if ($laptop['is_sale'] == '1') : ?>
+                                <span class="text-red-500 text-xl font-bold mb-2">Sale</span>
+                            <?php else : ?>
+                                <span class="badge bg-info">No Sale</span>
+                            <?php endif ?>
                             <img class="w-full h-48 object-cover mb-4" src="<?= $laptop['image'] ?>" alt="" />
                             <h3 class="text-lg font-bold">
                                 <a href="<?= ROOT_URL . '?ctl=detail&id=' . $laptop['id'] ?>" class="btn btn-outline-success">
@@ -172,7 +185,6 @@
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
-                                <span class="text-gray-500">(1 đánh giá)</span>
                             </div>
                         </div>
                     <?php endforeach ?>

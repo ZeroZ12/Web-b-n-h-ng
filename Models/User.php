@@ -81,4 +81,11 @@ class User extends BaseModel
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id, 'active'=>$active]);
     }
+    public function updatePass($id, $password)
+    {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "UPDATE users SET password=:password WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id, 'password'=>$hashedPassword]);
+    }
 }

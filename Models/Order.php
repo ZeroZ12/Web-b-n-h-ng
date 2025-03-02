@@ -86,4 +86,18 @@ class Order extends BaseModel
         $stmt->execute(['user_id' => $user_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function TotalPrice()
+    {
+        $sql = "SELECT SUM(total_price) AS total_revenue FROM orders";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC)['total_revenue'] ?? 0;
+    }
+    public function TotalOrder()
+    {
+        $sql = "SELECT COUNT(id) AS total_orders FROM orders";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC)['total_orders'] ?? 0;
+    }
 }

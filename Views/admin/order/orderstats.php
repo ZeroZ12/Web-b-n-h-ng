@@ -25,7 +25,7 @@
        Tổng giá trị đơn hàng
       </h2>
       <p class="text-2xl font-bold text-blue-600">
-       162,557,248,561 đ
+       <?= number_format($totalRevenue) ?> đ
       </p>
      </div>
      <div class="bg-white p-4 rounded shadow">
@@ -33,7 +33,7 @@
        Lợi nhuận gộp
       </h2>
       <p class="text-2xl font-bold text-blue-600">
-       37,519,327,650 đ
+      <?= number_format($grossProfit) ?> đ
       </p>
      </div>
      <div class="bg-white p-4 rounded shadow">
@@ -41,33 +41,41 @@
        Đơn hàng
       </h2>
       <p class="text-2xl font-bold text-blue-600">
-       864
+      <?= number_format($totalOrder) ?>
       </p>
      </div>
-     <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-semibold">
-       Giá trị tồn kho
-      </h2>
-      <p class="text-2xl font-bold text-blue-600">
-       235,034,324,600 đ
-      </p>
-     </div>
+     <!-- <canvas id="revenue" class="mt-6"></canvas> -->
     </div>
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
      <div class="bg-white p-4 rounded shadow">
       <h2 class="text-lg font-semibold">
-       Doanh thu thuần
+       Tổng Doanh Thu
       </h2>
-      <img alt="Graph showing net revenue" height="300" src="https://placehold.co/600x300" width="600"/>
+      <canvas id="revenue" class="mt-6"></canvas>     
      </div>
-     <div class="bg-white p-4 rounded shadow">
+     <!-- <div class="bg-white p-4 rounded shadow">
       <h2 class="text-lg font-semibold">
        Lợi nhuận gộp
       </h2>
       <img alt="Graph showing gross profit" height="300" src="https://placehold.co/600x300" width="600"/>
-     </div>
+     </div> -->
     </div>
-    
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const cta = document.getElementById('revenue').getContext('2d');
+  new Chart(cta, {
+    type: 'bar',
+    data: {
+      labels: ['Tổng doanh thu', 'Lợi nhuận gộp', 'Tổng đơn hàng'],
+      datasets: [{
+        label: 'Thống kê doanh thu',
+        data: [<?php echo $totalRevenue; ?>, <?php echo $grossProfit; ?>, <?php echo $totalOrder; ?>],
+        backgroundColor: ['blue', 'green', 'red'],
+      }]
+    }
+  });
+</script>
 
 <?php include_once ROOT_DIR . "Views/admin/footer.php";

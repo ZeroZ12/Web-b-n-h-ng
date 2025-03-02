@@ -20,9 +20,8 @@
         </nav>
         <div class="flex flex-col lg:flex-row bg-white p-4 rounded shadow">
             <div class="lg:w-1/3">
-                <img id="mainImage" alt="Product Image" class="w-full mb-4" height="300"
-                    src="<?= $product['image'] ?>"
-                    width="300" />
+                <img id="mainImage" class="w-64 h-64 border mb-4" src="<?= $product['image'] ?>" alt="Main Image" />
+
 
                 <!-- Ảnh thumbnail -->
                 <div class="flex space-x-2">
@@ -30,13 +29,18 @@
                         src="<?= $product['image'] ?>"
                         width="50" onclick="changeImage(this)" />
                     <img alt="Thumbnail 2" class="w-12 h-12 border cursor-pointer" height="50"
-                        src="<?= $product['image'] ?>"
+                        src="https://th.bing.com/th?id=ORMS.24a90138035687d7ac6a263b45d38864&pid=Wdp&w=268&h=140&qlt=90&c=1&rs=1&dpr=1.25&p=0"
                         width="50" onclick="changeImage(this)" />
                     <img alt="Thumbnail 3" class="w-12 h-12 border cursor-pointer" height="50"
-                        src="<?= $product['image'] ?>"
+                        src="https://www.bing.com/th?id=OADD2.10239412782965_1MQ53S01VGDIERA6I&pid=21.2&c=16&roil=0&roit=0.239&roir=1&roib=0.7624&w=268&h=140&dynsize=1&qlt=90"
                         width="50" onclick="changeImage(this)" />
                 </div>
             </div>
+            <script>
+                function changeImage(element) {
+                    document.getElementById("mainImage").src = element.src;
+                }
+            </script>
             <div class="lg:w-2/3 lg:pl-8">
                 <h1 class="text-xl font-bold mb-2">
                     <?= $product['name'] ?>
@@ -88,11 +92,15 @@
                         <i class="fas fa-gift text-red-600 mr-2">
                         </i>
                         <span class="text-red-600 font-bold">
-                            Quà tặng khuyến mãi
+                            Tình Trạng
                         </span>
                     </div>
                     <div class="text-sm text-gray-700">
-                        Tặng ngay 1 x RAM V-Color Prism RGB 16GB 3200 Grey (TL8G32S8H16GDE) trị giá 450.000đ
+                        <?php if ($product['quantity'] > 0) : ?>
+                            <span>Còn <?= $product['quantity'] ?> Sản Phẩm</span>
+                        <?php else : ?>
+                            <span>Hết Hàng</span>
+                        <?php endif ?>
                     </div>
                 </div>
                 <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>">

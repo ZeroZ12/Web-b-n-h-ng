@@ -43,7 +43,10 @@ class OrderController
     }
     public function orderstast()
     {
-        // $orders = (new Order)->all();
-        return view("admin.order.orderstats");
+        $orderModel = new Order();
+        $totalRevenue = $orderModel->TotalPrice();
+        $totalOrder = $orderModel->TotalOrder();
+        $grossProfit = $totalRevenue * 0.3;
+        return view("admin.order.orderstats",compact('orderModel','totalRevenue','totalOrder','grossProfit'));
     }
 }

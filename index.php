@@ -41,5 +41,7 @@ match ($ctl) {
     'order-detail' => (new OrderController)->detail(),
     'detail-user' => (new AutherController)->detailuser(),
     'update-user' => (new AutherController)->updatedetailuser(),
+    'updatepass' => (new AutherController)->lost(),
+    'go' => (new AutherController)->golost(),
     default => view( 'errors.404'),
 };

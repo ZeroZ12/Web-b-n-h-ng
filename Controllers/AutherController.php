@@ -1,6 +1,6 @@
 <?php
 
-class AutherController 
+class AutherController
 {
     public function register()
     {
@@ -13,7 +13,7 @@ class AutherController
 
             $userModel = new User;
 
-            if($userModel->emailExists($data['email'])) {
+            if ($userModel->emailExists($data['email'])) {
                 $_SESSION['message'] = "Email này đã tồn tại";
                 header("location: " . ROOT_URL . "?ctl=register");
                 exit();
@@ -65,20 +65,44 @@ class AutherController
         $message = session_flash('message');
         return view('clients.users.login', compact('message', 'error'));
     }
+    public function golost()
+    {
+        return view('clients.users.lost');
+    }
+    public function lost()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
+            $userMo = new User();
+
+            $user = $userMo->findUserOfEmail($email);
+
+            if ($user) {
+                (new User)->updatePass($user['id'], password_hash($password, PASSWORD_DEFAULT));
+                header('location: ' . ROOT_URL . '?ctl=updatepass');
+                exit();
+            } else {
+                header('location: ' . ROOT_URL . '?ctl=updatefail');
+                exit();
+            }
+        }else{
+            header("location: " . ROOT_URL . "?ctl=golost");
+            exit();
+        }
+    }
     public function logout()
     {
         session_unset();
         session_destroy();
         header("location: index.php");
     }
-
     public function index()
     {
         $users = (new User)->all();
         return view('admin.user.list', compact('users'));
     }
-
     public function detail($id)
     {
         $users = (new User)->find($id);
@@ -109,12 +133,12 @@ class AutherController
             $userMo = new User;
 
             $exitUser = $userMo->findUserOfEmail($email);
-            if($exitUser && $exitUser['id'] != $id) {
+            if ($exitUser && $exitUser['id'] != $id) {
                 $_SESSION['message'] = "Email này đã được sử dụng";
                 header("location: " . ROOT_URL . "?ctl=detai-luser");
                 exit();
             }
-            
+
             $dataU = [
                 'fullname' => $fullname,
                 'email' => $email,
@@ -122,15 +146,14 @@ class AutherController
                 'phone' => $phone
             ];
             $dataU['id'] = $id;
-            if($userMo->updateUser($id,$dataU)){
+            if ($userMo->updateUser($id, $dataU)) {
                 $_SESSION['message'] = "CẬP NHẬT THÀNH CÔNG";
             } else {
                 $_SESSION['message'] = "Có lỗi xảy ra";
             }
-            
+
             header("location: " . ROOT_URL . "?ctl=detail-user");
             exit();
-           
         }
         $_SESSION['message'] = "Có lỗi xảy ra";
         header("location: " . ROOT_URL . "?ctl=detail-user");
@@ -138,7 +161,7 @@ class AutherController
     }
     public function userAdminDetail()
     {
-        if(!isset($_GET['id'])){
+        if (!isset($_GET['id'])) {
             $_SESSION['mesage'] = "Không tìm thấy người dùng";
             header("location: " . ROOT_URL . "?ctl=listuser");
             exit();
@@ -146,7 +169,7 @@ class AutherController
         $id = $_GET['id'];
         $userMo = new User();
         $user = $userMo->findUserById($id);
-        if(!$user){
+        if (!$user) {
             $_SESSION['mesage'] = "Không tìm thấy người dùng";
             header("location: " . ADMIN_URL . "?ctl=listuser");
             exit();
@@ -167,12 +190,12 @@ class AutherController
             $userMo = new User;
 
             $exitUser = $userMo->findUserOfEmail($email);
-            if($exitUser && $exitUser['id'] != $id) {
+            if ($exitUser && $exitUser['id'] != $id) {
                 $_SESSION['message'] = "Email này đã được sử dụng";
                 header("location: " . ADMIN_URL  . "?ctl=detail-user&id=" . $id);
                 exit();
             }
-            
+
             $dataU = [
                 'fullname' => $fullname,
                 'email' => $email,
@@ -182,12 +205,12 @@ class AutherController
                 'password' => $password
             ];
 
-            if($userMo->updateUserA($id,$dataU)){
+            if ($userMo->updateUserA($id, $dataU)) {
                 $_SESSION['message'] = "CẬP NHẬT THÀNH CÔNG";
             } else {
                 $_SESSION['message'] = "Có lỗi xảy ra";
             }
-            
+
             header("location: " . ADMIN_URL  . "?ctl=listuser");
             exit();
         }
