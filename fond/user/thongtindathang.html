@@ -1,0 +1,325 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   HDTL
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+    #logo{
+        width: 120px;
+        height: 100px;
+        margin-left: 100px;
+    }
+    .navbar{
+        height: 75px;
+    }
+    .giohang{
+        margin-left: 700;
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-red-600 text-white text-center py-2">
+   <div class="container mx-auto flex justify-between items-center py-2 navbar">
+    <img id="logo" alt="GearVN Logo" class="" src="image/logo.png"/>
+    <div class="flex items-center space-x-4" id="header">
+    
+     <nav class="hidden md:flex space-x-4">
+      
+   
+   
+      <a class="hover:underline" href="#">
+        Dịch vụ kỹ thuật tại nhà
+      </a>
+      <a class="hover:underline" href="#">
+        Thu cũ đổi mới
+      </a>
+      <a class="hover:underline" href="#">
+       Tra cứu đơn hàng
+      </a>
+      <a class="hover:underline" href="#">
+       Tra cứu bảo hành
+      </a>
+     </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+     <input class="px-4 py-2 rounded-md" placeholder="Bạn cần tìm gì?" type="text"/>
+     <i class="fas fa-search">
+     </i>
+     <i class="fas fa-shopping-cart">
+     </i>
+     <i class="fas fa-user">
+     </i>
+    </div>
+   </div>
+  </header>
+
+  <div class="max-w-lg mx-auto bg-white p-6 mt-10 rounded-lg shadow-lg">
+    <div class="flex justify-between items-center mb-6">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-red-500 text-white flex items-center justify-center rounded-full">1</div>
+            <span>Giỏ hàng</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-red-500 text-white flex items-center justify-center rounded-full">2</div>
+            <span>Thông tin đặt hàng</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-gray-300 text-gray-500 flex items-center justify-center rounded-full">3</div>
+            <span>Thanh toán</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-gray-300 text-gray-500 flex items-center justify-center rounded-full">4</div>
+            <span>Hoàn tất</span>
+        </div>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-lg font-semibold mb-2">Thông tin khách mua hàng</h2>
+        <div class="flex items-center mb-4">
+            <label class="mr-4">
+                <input type="radio" name="gender" class="mr-1"> Anh
+            </label>
+            <label>
+                <input type="radio" name="gender" class="mr-1"> Chị
+            </label>
+        </div>
+        <div class="flex space-x-4 mb-4">
+            <input type="text" placeholder="Nhập họ tên" class="w-1/2 p-2 border border-gray-300 rounded">
+            <input type="text" placeholder="Nhập số điện thoại" class="w-1/2 p-2 border border-gray-300 rounded">
+        </div>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-lg font-semibold mb-2">Chọn cách nhận hàng</h2>
+        <div class="mb-4">
+            <label class="flex items-center">
+                <input type="radio" name="delivery" class="mr-2"> Giao hàng tận nơi
+            </label>
+        </div>
+        <div class="space-y-4 mb-4">
+            <div class="flex space-x-4">
+                <select class="w-1/2 p-2 border border-gray-300 rounded">
+                    <option>Hồ Chí Minh</option>
+                </select>
+                <select class="w-1/2 p-2 border border-gray-300 rounded">
+                    <option>Quận Gò Vấp</option>
+                </select>
+            </div>
+            <div class="flex space-x-4">
+                <select class="w-1/2 p-2 border border-gray-300 rounded">
+                    <option>Phường 03</option>
+                </select>
+                <input type="text" placeholder="Số nhà, tên đường" class="w-1/2 p-2 border border-gray-300 rounded">
+            </div>
+        </div>
+        <div class="mb-4">
+            <input type="text" placeholder="Lưu ý giao hàng (Không bắt buộc)" class="w-full p-2 border border-gray-300 rounded">
+        </div>
+        <div class="mb-4">
+            <label class="flex items-center">
+                <input type="checkbox" class="mr-2"> Xuất hóa đơn cho đơn hàng
+            </label>
+        </div>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-lg font-semibold mb-2">Dịch vụ giao hàng</h2>
+        <div class="mb-4">
+            <label class="flex items-center">
+                <input type="radio" name="shipping" class="mr-2"> Miễn phí vận chuyển (Giao hàng tiêu chuẩn)
+            </label>
+        </div>
+    </div>
+    <div class="mb-6">
+        <div class="flex justify-between items-center mb-4">
+            <span>Giảm giá:</span>
+            <div class="flex items-center space-x-2">
+                <input type="text" placeholder="Mã giảm giá" class="p-2 border border-gray-300 rounded">
+                <span class="text-red-500">-100.000₫</span>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mb-4">
+            <span>Phí vận chuyển:</span>
+            <span>Miễn phí</span>
+        </div>
+        <div class="flex justify-between items-center text-lg font-semibold">
+            <span>Tổng tiền:</span>
+            <span class="text-red-500">9.890.000₫</span>
+        </div>
+    </div>
+    <button class="w-full bg-red-500 text-white py-3 rounded-lg text-lg font-semibold">ĐẶT HÀNG NGAY</button>
+    <p class="text-center text-sm text-gray-500 mt-4">Bạn có thể chọn hình thức thanh toán sau khi đặt hàng</p>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white py-8">
+    <div class="container mx-auto px-4">
+     <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div>
+       <h3 class="font-bold mb-2">
+        VỀ HDTL
+       </h3>
+       <ul>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Giới thiệu
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Tuyển dụng
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="font-bold mb-2">
+        CHÍNH SÁCH
+       </h3>
+       <ul>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Chính sách bảo hành
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Chính sách giao hàng
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Chính sách bảo mật
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="font-bold mb-2">
+        THÔNG TIN
+       </h3>
+       <ul>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Hệ thống cửa hàng
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Hướng dẫn mua hàng
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Hướng dẫn thanh toán
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Hướng dẫn trả góp
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Tra cứu địa chỉ bảo hành
+         </a>
+        </li>
+        <li>
+         <a class="text-black hover:underline" href="#">
+          Dịch vụ vệ sinh miễn phí
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="font-bold mb-2">
+        TỔNG ĐÀI HỖ TRỢ (8:00 - 21:00)
+       </h3>
+       <ul>
+        <li>
+         <a class="text-blue-600 hover:underline" href="tel:19005301">
+          Mua hàng: 1900.5301
+         </a>
+        </li>
+        <li>
+         <a class="text-blue-600 hover:underline" href="tel:19005325">
+          Bảo hành: 1900.5325
+         </a>
+        </li>
+        <li>
+         <a class="text-blue-600 hover:underline" href="tel:18006173">
+          Khiếu nại: 1800.6173
+         </a>
+        </li>
+        <li>
+         <a class="text-blue-600 hover:underline" href="mailto:cskh@gearvn.com">
+          Email: cskh@hdtl.com
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="font-bold mb-2">
+        ĐƠN VỊ VẬN CHUYỂN
+       </h3>
+       <div class="flex space-x-2 mb-4">
+        <img alt="GHN logo" src="https://placehold.co/50x30"/>
+        <img alt="EMS logo" src="https://placehold.co/50x30"/>
+        <img alt="GVN logo" src="https://placehold.co/50x30"/>
+        <img alt="Another shipping logo" src="https://placehold.co/50x30"/>
+       </div>
+       <h3 class="font-bold mb-2">
+        CÁCH THỨC THANH TOÁN
+       </h3>
+       <div class="flex space-x-2">
+        <img alt="Payment method 1" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 2" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 3" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 4" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 5" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 6" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 7" src="https://placehold.co/50x30"/>
+        <img alt="Payment method 8" src="https://placehold.co/50x30"/>
+       </div>
+      </div>
+     </div>
+     <div class="mt-8 border-t pt-4">
+      <div class="flex justify-between items-center">
+       <div class="flex space-x-4">
+        <span class="font-bold">
+         KẾT NỐI VỚI CHÚNG TÔI
+        </span>
+        <a class="text-black" href="#">
+         <i class="fab fa-facebook-f">
+         </i>
+        </a>
+        <a class="text-black" href="#">
+         <i class="fab fa-tiktok">
+         </i>
+        </a>
+        <a class="text-black" href="#">
+         <i class="fab fa-instagram">
+         </i>
+        </a>
+        <a class="text-black" href="#">
+         <i class="fab fa-youtube">
+         </i>
+        </a>
+        <a class="text-black" href="#">
+         <i class="fab fa-zalo">
+         </i>
+        </a>
+       </div>
+       <div class="flex space-x-2">
+        <img alt="Certification logo 1" src="https://placehold.co/50x30"/>
+        <img alt="Certification logo 2" src="https://placehold.co/50x30"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+ </body>
+</html>

@@ -1,0 +1,223 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dashboard
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6">
+    <div class="flex justify-between items-center mb-6">
+     <h1 class="text-2xl font-semibold">
+      TỔNG QUAN BÁO CÁO
+     </h1>
+     <div class="flex items-center">
+      <input class="border rounded p-2 mr-4" placeholder="Tìm kiếm..." type="text"/>
+      <i class="fas fa-bell text-xl mr-4">
+      </i>
+      <img alt="User profile picture" class="rounded-full" height="40" src="https://placehold.co/40x40" width="40"/>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Tổng giá trị đơn hàng
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       162,557,248,561 đ
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Lợi nhuận gộp
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       37,519,327,650 đ
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Đơn hàng
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       864
+      </p>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Giá trị tồn kho
+      </h2>
+      <p class="text-2xl font-bold text-blue-600">
+       235,034,324,600 đ
+      </p>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Doanh thu thuần
+      </h2>
+      <img alt="Graph showing net revenue" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Lợi nhuận gộp
+      </h2>
+      <img alt="Graph showing gross profit" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Top sản phẩm bán chạy
+      </h2>
+      <ul class="list-disc pl-5">
+       <li>
+        AirPods (4th gen) 1,000,000 đ
+       </li>
+       <li>
+        iPhone 13 20,000,000 đ
+       </li>
+       <li>
+        Apple MagSafe Charger 1,200,000 đ
+       </li>
+       <li>
+        USB-C to Lightning Cable 1m 500,000 đ
+       </li>
+       <li>
+        iPhone 13 Pro Max Silicone Case 1,500,000 đ
+       </li>
+      </ul>
+     </div>
+     <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold">
+       Giá trị tồn kho theo tháng
+      </h2>
+      <img alt="Graph showing inventory value by month" height="300" src="https://placehold.co/600x300" width="600"/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

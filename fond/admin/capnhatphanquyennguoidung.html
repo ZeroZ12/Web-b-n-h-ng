@@ -1,0 +1,416 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Admin Dashboard
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex">
+   <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 p-6">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+     <div class="relative w-1/2">
+      <input class="w-full p-2 border border-gray-300 rounded" placeholder="Tìm kiếm tại đây" type="text"/>
+      <i class="fas fa-search absolute top-3 right-3 text-gray-400">
+      </i>
+     </div>
+     <div class="flex items-center">
+      <img alt="User avatar" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/EVBr5O-sDMaUBQVsGJWh5BSCaDE3iO-_fq6jMWn_4aQ.jpg" width="40"/>
+      <div class="ml-2">
+       <p class="text-sm font-semibold">
+        Tara-admin
+       </p>
+       <p class="text-xs text-gray-500">
+        Quản lý viên
+       </p>
+      </div>
+      <i class="fas fa-bell ml-4 text-gray-500">
+      </i>
+      <i class="fas fa-cog ml-4 text-gray-500">
+      </i>
+     </div>
+    </div>
+    <!-- Content -->
+    <div class="bg-white p-6 rounded shadow">
+     <h2 class="text-xl font-semibold mb-4">
+      CẤP NHẬP PHÂN QUYỀN NGƯỜI DÙNG
+     </h2>
+     <div class="overflow-x-auto">
+      <table class="min-w-full bg-white">
+       <thead>
+        <tr>
+         <th class="py-2 px-4 border-b">
+          TÊN QUYỀN
+         </th>
+         <th class="py-2 px-4 border-b">
+          QUẢN TRỊ VIÊN
+         </th>
+         <th class="py-2 px-4 border-b">
+          KHÁCH HÀNG
+         </th>
+         <th class="py-2 px-4 border-b">
+          NHÂN VIÊN
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Tạo mới thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.store)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem nhiều thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.index)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem một thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.show)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Chỉnh sửa thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.update)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xóa thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.destroy)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Tạo mới quyền người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (permissions.store)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem nhiều quyền người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (permissions.index)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem một quyền người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (permissions.show)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Chỉnh sửa quyền người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (permissions.update)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xóa quyền người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (permissions.destroy)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Cập nhập quyền cho người dùng
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.updatePermissions)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Tạo mới nhóm thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.store)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem nhiều nhóm thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.index)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xem một nhóm thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.show)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Chỉnh sửa nhóm thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.update)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          Xóa nhóm thành viên
+         </td>
+         <td class="py-2 px-4 border-b text-orange-500">
+          (users.catalogues.destroy)
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+         <td class="py-2 px-4 border-b">
+          <input class="form-checkbox" type="checkbox"/>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="flex justify-end mt-4">
+      <button class="bg-blue-500 text-white py-2 px-4 rounded flex items-center">
+       <i class="fas fa-save mr-2">
+       </i>
+       Lưu thông tin
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,284 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+        <!-- Main Content -->
+        <div class="w-4/5 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <input type="text" placeholder="Tìm kiếm sản phẩm" class="border p-2 w-1/2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">+ Thêm mới</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">DANH SÁCH SẢN PHẨM</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex space-x-4">
+                        <select class="border p-2">
+                            <option>Chọn tình trạng</option>
+                        </select>
+                        <input type="text" placeholder="Nhập tên sản phẩm" class="border p-2">
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="bg-gray-200 px-4 py-2 rounded">Tất cả trạng thái</button>
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded">Lưu trữ</button>
+                    </div>
+                </div>
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2 border">Tên sản phẩm</th>
+                            <th class="p-2 border">Loại sản phẩm</th>
+                            <th class="p-2 border">Tình trạng</th>
+                            <th class="p-2 border">Thương hiệu</th>
+                            <th class="p-2 border">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Tai nghe Bluetooth T5 Plus 2023</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Tai nghe</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Áo khoác M3</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">MAC</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <!-- Repeat for each product -->
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu vàng</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu đen</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Trắng đen</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Xanh Lục</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu xám</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Màu đỏ</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Silicone Apple Xanh Dương</td>
+                            <td class="p-2 border">Sản phẩm có sẵn</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Magic Mouse</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Ốp lưng MagSafe iPhone 13 Pro Nhựa Trong Apple</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Magic Keyboard</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Magic Keyboard</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 border">Cáp USB-C - Lightning 1m</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="bg-gray-100">
+                            <td class="p-2 border">Cáp sạc không dây Apple Watch</td>
+                            <td class="p-2 border">Sản phẩm giao diện</td>
+                            <td class="p-2 border text-green-500">Còn hàng</td>
+                            <td class="p-2 border text-blue-500">Phụ kiện</td>
+                            <td class="p-2 border"><input type="checkbox" checked></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flex justify-between items-center mt-4">
+                    <div class="flex space-x-2">
+                        <button class="bg-gray-200 px-4 py-2 rounded">1</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded">2</button>
+                        <button class="bg-gray-200 px-4 py-2 rounded">3</button>
+                    </div>
+                    <div class="text-gray-500">Showing 1 to 10 of 30 entries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
