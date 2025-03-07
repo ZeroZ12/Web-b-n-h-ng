@@ -70,6 +70,7 @@
                                     </span>
                                 <?php endif ?>
                             </div>
+                    
                             <div class="flex justify-between items-center mt-2">
                                 <span class="text-yellow-500">
                                     <i class="fas fa-star"></i> 5.0

@@ -10,10 +10,6 @@ class CartController
 
         $product = (new Product)->find($id);
 
-        // if(isset($cartst[$id])) {
-        //     return header("location: " . $_SESSION['URI']);
-        // }
-
         if(isset($cartst[$id])) {
             $cartst[$id]['quantity'] += 1;
         }else{
