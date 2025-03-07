@@ -1,0 +1,357 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Admin Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <div class="flex h-screen">
+   <!-- Sidebar -->
+   <div class="bg-red-600 text-white w-64 p-4">
+    <div class="flex items-center mb-6">
+     <div class="bg-white rounded-full p-2">
+      <img alt="Logo" class="w-8 h-8" height="40" src="https://storage.googleapis.com/a1aa/image/YFr3axPSyLgJyAocUiTLKTZRjXKprLyO7cwtYYYGMFE.jpg" width="40"/>
+     </div>
+     <span class="ml-2 text-xl font-bold">
+      TRANG QUẢN TRỊ
+     </span>
+    </div>
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded bg-blue-700" href="#">
+        <i class="fas fa-home mr-2">
+        </i>
+        Tổng quan
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Tin nhắn
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-chart-bar mr-2">
+        </i>
+        Thống Kê
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-shopping-cart mr-2">
+        </i>
+        Đơn Hàng
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-users mr-2">
+        </i>
+        Thành Viên
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-box mr-2">
+        </i>
+        Sản Phẩm
+       </a>
+       <ul class="ml-4 mt-2">
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-list mr-2">
+          </i>
+          Danh Sách Thuộc Tính
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-tags mr-2">
+          </i>
+          Danh Sách Thương Hiệu
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-box-open mr-2">
+          </i>
+          Danh Sách Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-layer-group mr-2">
+          </i>
+          Nhóm Sản Phẩm
+         </a>
+        </li>
+        <li class="mb-2">
+         <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+          <i class="fas fa-star mr-2">
+          </i>
+          Đánh Giá Sản Phẩm
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-bullhorn mr-2">
+        </i>
+        Marketing
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-newspaper mr-2">
+        </i>
+        Bài Viết
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-blue-700 rounded" href="#">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Cấu hình
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <!-- Main content -->
+   <div class="flex-1 p-6">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+     <div class="relative w-1/2">
+      <input class="w-full py-2 px-4 rounded border border-gray-300" placeholder="Tìm kiếm tại đây" type="text"/>
+      <i class="fas fa-search absolute top-3 right-3 text-gray-400">
+      </i>
+     </div>
+     <div class="flex items-center space-x-4">
+      <i class="fas fa-bell text-xl text-gray-600">
+      </i>
+      <div class="flex items-center space-x-2">
+       <img alt="User avatar" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/n7eBQxkork-jYYh3z-mCzPrIQ54Y9LSjihPddgpN_3U.jpg" width="40"/>
+       <div>
+        <p class="text-gray-800 font-semibold">
+         Tan-admin
+        </p>
+        <p class="text-gray-500 text-sm">
+         Quản trị viên
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Content -->
+    <div class="bg-white p-6 rounded-lg shadow">
+     <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-semibold">
+       DANH SÁCH ĐÁNH GIÁ
+      </h2>
+      <button class="py-2 px-4 bg-gray-200 rounded border border-gray-300">
+       Tải lại trang
+      </button>
+     </div>
+     <div class="flex space-x-4 mb-4">
+      <select class="py-2 px-4 rounded border border-gray-300">
+       <option>
+        Chọn tình trạng
+       </option>
+      </select>
+      <div class="relative flex-1">
+       <input class="w-full py-2 px-4 rounded border border-gray-300" placeholder="Nhập để tìm kiếm..." type="text"/>
+       <i class="fas fa-search absolute top-3 right-3 text-gray-400">
+       </i>
+      </div>
+     </div>
+     <table class="w-full text-left border-collapse">
+      <thead>
+       <tr class="bg-gray-100">
+        <th class="py-2 px-4 border">
+         Sản phẩm
+        </th>
+        <th class="py-2 px-4 border">
+         Người dùng
+        </th>
+        <th class="py-2 px-4 border">
+         Đánh giá
+        </th>
+        <th class="py-2 px-4 border">
+         Bình luận
+        </th>
+        <th class="py-2 px-4 border">
+         Ảnh
+        </th>
+        <th class="py-2 px-4 border">
+         Thời gian
+        </th>
+        <th class="py-2 px-4 border">
+         Phản hồi
+        </th>
+        <th class="py-2 px-4 border">
+         Trạng thái
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="py-2 px-4 border text-blue-600">
+         <a href="#">
+          iPhone 12
+         </a>
+        </td>
+        <td class="py-2 px-4 border">
+         tanvn
+        </td>
+        <td class="py-2 px-4 border">
+         <span class="text-yellow-500">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </span>
+        </td>
+        <td class="py-2 px-4 border text-blue-600">
+         <a href="#">
+          Sản phẩm hay
+         </a>
+        </td>
+        <td class="py-2 px-4 border">
+         <div class="flex space-x-2">
+          <img alt="Product image 1" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/AOQewV5A7T2HnEV4u8rAfokGQ7Bp4cnqN3xn0a5UPKw.jpg" width="40"/>
+          <img alt="Product image 2" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/wIYxPben0oYf9cdgubCE2gJCskChRYDrexmNVbwc-ls.jpg" width="40"/>
+          <img alt="Product image 3" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/VcPKveTK-rt7YrAUXxkjv9lFyCx7OtS5gtEbfmIE7tw.jpg" width="40"/>
+          <img alt="Product image 4" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/v66kBJp_JcX4SaCNcpgK6tgOcjlLFAvltmUCWAR-5lA.jpg" width="40"/>
+         </div>
+        </td>
+        <td class="py-2 px-4 border">
+         26-10-2024 14:52:30
+        </td>
+        <td class="py-2 px-4 border">
+         <span class="bg-green-100 text-green-600 py-1 px-3 rounded-full text-xs">
+          Đã phản hồi
+         </span>
+        </td>
+        <td class="py-2 px-4 border">
+         <label class="switch">
+          <input checked="" type="checkbox"/>
+          <span class="slider round">
+          </span>
+         </label>
+        </td>
+       </tr>
+       <tr>
+        <td class="py-2 px-4 border text-blue-600">
+         <a href="#">
+          Ốp lưng MagSafe iPhone 16 Pro Max Nhựa Trong Apple
+         </a>
+        </td>
+        <td class="py-2 px-4 border">
+         tanvn
+        </td>
+        <td class="py-2 px-4 border">
+         <span class="text-yellow-500">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </span>
+        </td>
+        <td class="py-2 px-4 border text-blue-600">
+         <a href="#">
+          Sản phẩm hay
+         </a>
+        </td>
+        <td class="py-2 px-4 border">
+         <div class="flex space-x-2">
+          <img alt="Product image 1" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/AOQewV5A7T2HnEV4u8rAfokGQ7Bp4cnqN3xn0a5UPKw.jpg" width="40"/>
+          <img alt="Product image 2" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/wIYxPben0oYf9cdgubCE2gJCskChRYDrexmNVbwc-ls.jpg" width="40"/>
+          <img alt="Product image 3" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/VcPKveTK-rt7YrAUXxkjv9lFyCx7OtS5gtEbfmIE7tw.jpg" width="40"/>
+          <img alt="Product image 4" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/v66kBJp_JcX4SaCNcpgK6tgOcjlLFAvltmUCWAR-5lA.jpg" width="40"/>
+         </div>
+        </td>
+        <td class="py-2 px-4 border">
+         26-10-2024 14:52:30
+        </td>
+        <td class="py-2 px-4 border">
+         <span class="bg-red-100 text-red-600 py-1 px-3 rounded-full text-xs">
+          Chưa phản hồi
+         </span>
+        </td>
+        <td class="py-2 px-4 border">
+         <label class="switch">
+          <input checked="" type="checkbox"/>
+          <span class="slider round">
+          </span>
+         </label>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <style>
+   .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+  </style>
+ </body>
+</html>
