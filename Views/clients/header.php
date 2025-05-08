@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="fond/css.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
+
 </head>
 
 <body class="bg-gray-100">
@@ -40,6 +40,7 @@
               Thu cũ đổi mới
             </span>
           </div>
+
           <a href="<?= isset($_SESSION['user']) ? ROOT_URL . '?ctl=list-order' : ROOT_URL . '?ctl=login&redirect=list-order' ?>">
             <div class="flex items-center space-x-2">
               <i class="fas fa-camera"></i>
@@ -57,9 +58,14 @@
         </nav>
       </div>
       <div class="flex items-center space-x-4">
-        <form class="search-form">
-          <input class="input" style="color: black; background-color: white;" class="px-4 py-2 rounded-md" placeholder="Bạn cần tìm gì?" type="search" aria-label="Search" id="keyword" />
-          <button type="button" id="btnSearch" class="fas fa-search"></button>
+        <form class="search-form flex items-center bg-white rounded-full px-4 py-2 shadow-md">
+          <input class="input flex-1 text-black bg-transparent outline-none"
+            placeholder="Bạn cần tìm gì?"
+            type="search"
+            aria-label="Search"
+            id="keyword" />
+          <button type="button" id="btnSearch"
+            class="fas fa-search text-black text-lg ml-2 hover:text-gray-700 transition"></button>
         </form>
         <a href="<?= ROOT_URL . '?ctl=view-cart' ?>">
           <i class="fas fa-shopping-cart">

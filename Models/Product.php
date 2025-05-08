@@ -16,7 +16,6 @@ class Product extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
     /**
      * Hàm lấy ra các sản phẩm là LAPTOPGAMING
      * được xác định bởi thuộc tính type=1

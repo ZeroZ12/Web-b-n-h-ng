@@ -136,3 +136,45 @@
         grid-column: span 1;
     }
 }
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.top-2 {
+    top: 0.5rem; /* Đẩy nhãn xuống một chút */
+}
+
+.left-2 {
+    left: 0.5rem; /* Đẩy nhãn sang phải một chút */
+}
+
+.bg-red-500 {
+    background-color: #f56565; /* Màu đỏ */
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}

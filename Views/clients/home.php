@@ -1,5 +1,6 @@
 <?php include_once ROOT_DIR . "Views/clients/header.php" ?>
 <!-- Main Content -->
+<<<<<<< HEAD
 <main class="container mx-auto mt-4 px-4">
     <div class="grid grid-cols-12 gap-6">
         <!-- Sidebar - Chiếm 2 cột -->

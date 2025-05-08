@@ -8,15 +8,13 @@
         <?php if ($products) : ?>
             <?php foreach ($products as $product) : ?>
                 <!-- Product 1 -->
-                <div class="bg-white p-4 rounded shadow">
-                    <div class="flex justify-between items-center mb-2">
-                    </div>
-                    <img alt="PC Image 1" class="w-full mb-2" height="200" src="<?= $product['image'] ?>" width="200" />
-                    <span class="bg-red-500 text-white px-2 py-1 text-xs rounded">
-                        Bán chạy
-                    </span>
+                <div class="bg-white p-4 rounded shadow relative">
+                    <?php if ($product['is_sale'] == '1') : ?>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">SALE</span>
+                    <?php endif ?>
+                    <img alt="<?= $product['name'] ?>" class="w-full mb-2" height="200" src="<?= $product['image'] ?>" width="200" />
                     <h2 class="text-lg font-bold mb-2">
-                    <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
+                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
                             <h5 class="product-name"><?= $product['name'] ?></h5>
                         </a>
                     </h2>

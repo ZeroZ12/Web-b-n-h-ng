@@ -214,6 +214,13 @@
                             <div class="flex justify-between items-center mt-4">
                                 <span class="text-red-500 text-xl font-bold mb-2"><span class="product-price"><?= number_format($pro['price']) ?> đ</span></span>
                             </div>
+<!-- <<<<<<< HEAD
+======= 
+                            <div class="text-red-500 text-xl font-bold mb-2">
+                                <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
+                                <span class="text-gray-500">(1 đánh giá)</span>
+                            </div>
+>>>>>>> 8d94403b2dbbaaf0108b27d8df25e2de1ddb783d -->
                         </div>
                     <?php endforeach ?>
                 </div>

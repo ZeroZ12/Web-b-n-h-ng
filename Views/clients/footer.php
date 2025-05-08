@@ -172,56 +172,72 @@
   btnSearch = document.getElementById('btnSearch')
   keyword = document.getElementById('keyword');
 
-  btnSearch.addEventListener('click', function(){
-    location.href="<?= ROOT_URL . '?ctl=search&keyword=' ?>" + keyword.value;
+  btnSearch.addEventListener('click', function() {
+    location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + keyword.value;
   })
 
-  keyword.addEventListener('keypress', function(event){
-    if(event.key == 'Enter') {
-      location.href="<?= ROOT_URL . '?ctl=search&keyword=' ?>" + keyword.value;
+  keyword.addEventListener('keypress', function(event) {
+    if (event.key == 'Enter') {
+      location.href = "<?= ROOT_URL . '?ctl=search&keyword=' ?>" + keyword.value;
       event.preventDefault();
     }
   })
-  
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4, // Hiển thị 4 sản phẩm
-        spaceBetween: 20,
-        autoHeight: true, // Khoảng cách giữa các sản phẩm
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        loop: true, // Lặp vô hạn
-    });
 
-    var pcSwiper = new Swiper(".pcComponentsSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        autoHeight: true,
-        navigation: {
-            nextEl: ".pc-next",
-            prevEl: ".pc-prev",
-        },
-        loop: true,
-    });
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4, // Hiển thị 4 sản phẩm
+    spaceBetween: 20,
+    autoHeight: true, // Khoảng cách giữa các sản phẩm
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true, // Lặp vô hạn
+  });
 
-    var laptopSwiper = new Swiper(".laptopSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        autoHeight: true,
-        navigation: {
-            nextEl: ".laptop-next",
-            prevEl: ".laptop-prev",
-        },
-        loop: true,
-    });
+  var pcSwiper = new Swiper(".pcComponentsSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".pc-next",
+      prevEl: ".pc-prev",
+    },
+    loop: true,
+  });
 
-    // JavaScript để hiện/ẩn menu dropdown -->
+  var laptopSwiper = new Swiper(".laptopSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".laptop-next",
+      prevEl: ".laptop-prev",
+    },
+    loop: true,
+  });
 
-    document.querySelector(".fas.fa-user").addEventListener("click", function() {
-        document.querySelector(".dropdown-menu").classList.toggle("hidden");
+  // JavaScript để hiện/ẩn menu dropdown -->
+
+  document.querySelector(".fas.fa-user").addEventListener("click", function() {
+    document.querySelector(".dropdown-menu").classList.toggle("hidden");
+  });
+
+  // Xử lý tăng/giảm số lượng
+  document.querySelectorAll('.increment-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const input = this.parentNode.querySelector('.quantity-input');
+      input.value = parseInt(input.value) + 1;
     });
-  
+  });
+
+  document.querySelectorAll('.decrement-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const input = this.parentNode.querySelector('.quantity-input');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    });
+  });
 </script>
 </body>
 
