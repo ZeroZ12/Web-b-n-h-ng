@@ -1,14 +1,13 @@
 <?php include_once ROOT_DIR . "Views/clients/header.php" ?>
 <!-- Main Content -->
-<main class="container mx-auto mt-4">
-    <div class="grid grid-cols-12 gap-4">
-        <!-- Sidebar -->
-        <aside class="col-span-3">
+<main class="container mx-auto mt-4 p-4">
+    <div class="grid grid-cols-12 gap-6">
+        <!-- Sidebar - Chiếm 3 cột -->
+        <aside class="col-span-3 bg-white rounded-lg shadow p-4">
             <?php include_once ROOT_DIR . "Views/clients/sidebar.php" ?>
         </aside>
-    </div>
-
-    <div class="container mx-auto p-4">
+        
+        <!-- Nội dung chính - Chiếm 9 cột -->
         <section class="col-span-9">
             <!-- PC bán chạy Section -->
             <div class="mb-8">
@@ -16,7 +15,7 @@
                     <h2 class="text-xl font-bold"><?= $category_name[0]['cate_name'] ?> bán chạy</h2>
                     <div class="flex items-center space-x-4">
                         <span class="text-red-500">Trả góp 0%</span>
-                        <a class="text-blue-500" href="#">Xem tất cả</a>
+                        <a class="text-blue-500 hover:underline" href="#">Xem tất cả</a>
                     </div>
                 </div>
 
@@ -25,32 +24,28 @@
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <?php foreach ($products as $product) : ?>
-                                <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
-                                    <img alt="" class="w-full h-48 object-cover mb-4" src="<?= $product['image'] ?>" />
-                                    <h3 class="text-lg font-bold">
-                                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="btn btn-outline-success">
-                                            <h5 class="product-name"><?= $product['name'] ?></h5>
+                                <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full flex flex-col">
+                                    <img alt="<?= $product['name'] ?>" class="w-full h-48 object-contain mb-4" src="<?= $product['image'] ?>" />
+                                    <h3 class="text-lg font-bold flex-grow">
+                                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="hover:text-red-600 transition">
+                                            <?= $product['name'] ?>
                                         </a>
                                     </h3>
-                                    <div class="flex justify-between items-center mt-4">
-                                        <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
-                                            <span class="text-gray-500 line-through mb-2">
-                                                <span class="product-price"><?= number_format($product['price']) ?> đ</span>
-                                            </span>
-                                            <span class="text-red-500 text-xl font-bold mb-2">
-                                                <span class="product-price-sale"><?= number_format($product['price_sale']) ?> đ</span>
-                                            </span>
-                                        <?php else : ?>
-                                            <span class="text-red-500 text-xl font-bold mb-2">
-                                                <span class="product-price"><?= number_format($product['price']) ?> đ</span>
-                                            </span>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="flex justify-between items-center mt-2">
-                                        <span class="text-yellow-500">
-                                            <i class="fas fa-star"></i> 5.0
-                                        </span>
-                                        <span class="text-gray-500">(1 đánh giá)</span>
+                                    <div class="mt-auto">
+                                        <div class="flex justify-between items-center mt-4">
+                                            <?php if (!empty($product['price_sale']) && $product['price_sale'] > 0) : ?>
+                                                <span class="text-gray-500 line-through">
+                                                    <?= number_format($product['price']) ?> đ
+                                                </span>
+                                                <span class="text-red-500 text-xl font-bold">
+                                                    <?= number_format($product['price_sale']) ?> đ
+                                                </span>
+                                            <?php else : ?>
+                                                <span class="text-red-500 text-xl font-bold">
+                                                    <?= number_format($product['price']) ?> đ
+                                                </span>
+                                            <?php endif ?>
+                                        </div>
                                     </div>
                                 </div>
                             <?php endforeach ?>
@@ -59,17 +54,19 @@
 
                     <!-- Nút điều hướng -->
                     <div class="absolute top-1/2 -left-6 transform -translate-y-1/2">
-                        <button class="swiper-button-prev text-3xl text-gray-600"></button>
+                        <button class="swiper-button-prev bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition">
+                            <i class="fas fa-chevron-left text-gray-600 text-xl"></i>
+                        </button>
                     </div>
                     <div class="absolute top-1/2 -right-6 transform -translate-y-1/2">
-                        <button class="swiper-button-next text-3xl text-gray-600"></button>
+                        <button class="swiper-button-next bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition">
+                            <i class="fas fa-chevron-right text-gray-600 text-xl"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
 </main>
 
-
-<?php include_once ROOT_DIR . "Views/clients/footer.php";
+<?php include_once ROOT_DIR . "Views/clients/footer.php"; ?>

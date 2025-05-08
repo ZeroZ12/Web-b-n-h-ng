@@ -1,80 +1,20 @@
 <aside class="col-span-2 bg-white p-4">
-
-        <ul class="space-y-2">
-          <li>
-            <a class="flex items-center space-x-2" href="index.php">
-              <li class="fas fa-laptop">
-                <?php foreach ($categories as $cate) : ?>
-              </li>
-              <li>
-              <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>">
-							  <?= $cate['cate_name'] ?></a>
-              </li>
-              <?php endforeach ?>
-            </a>
-          </li>
-          <!-- <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-desktop">
-              </i>
-              <span>
-                PC GVN
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-microchip">
-              </i>
-              <span>
-                Main, CPU, VGA
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-hdd">
-              </i>
-              <span>
-                Ổ cứng, RAM, Thẻ nhớ
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-tv">
-              </i>
-              <span>
-                Màn hình
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-keyboard">
-              </i>
-              <span>
-                Bàn phím
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-plug">
-              </i>
-              <span>
-                Phụ kiện (Hub, sạc, cáp...)
-              </span>
-            </a>
-          </li> -->
-          <li>
-            <a class="flex items-center space-x-2" href="#">
-              <i class="fas fa-tools">
-              </i>
-              <span>
-                Dịch vụ và thông tin khác
-              </span>
-            </a>
-          </li>
-        </ul>
-      </aside>
+  <ul class="space-y-2">
+    <!-- Danh sách categories -->
+    <?php foreach ($categories as $cate) : ?>
+    <li class="px-2">
+      <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-100 transition <?= ($currentCategory == $cate['id']) ? 'bg-blue-50 text-blue-600' : '' ?>">
+        <?= $cate['cate_name'] ?>
+      </a>
+    </li>
+    <?php endforeach ?>
+    
+    <!-- Mục Dịch vụ -->
+    <li class="px-2">
+      <a href="#" class="flex items-center space-x-2">
+        <i class="fas fa-tools"></i>
+        <span>Dịch vụ và thông tin khác</span>
+      </a>
+    </li>
+  </ul>
+</aside>
