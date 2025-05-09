@@ -1,4 +1,3 @@
-<?php echo ($sumPrice) ?>
 <?php include_once ROOT_DIR . "./Views/clients/header.php" ?>
 
 <div class="max-w-4xl mx-auto p-4">
@@ -46,7 +45,7 @@
                 <div class="mt-4">
                     <div class="grid grid-cols-2 gap-4 mt-4">
                         <p class="text-gray-600">Phí vận chuyển</p>
-                        <p class="text-gray-600 ">Miễn phí</p>
+                        <p class="text-gray-600 "></p>
                     </div>
                     <div class="grid grid-cols-2 gap-4 mt-4 font-semibold">
                         <p class="text-gray-600">Tổng cộng</p>

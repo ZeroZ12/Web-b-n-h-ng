@@ -25,6 +25,9 @@
                         <div class="swiper-wrapper">
                             <?php foreach ($products as $product) : ?>
                                 <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full flex flex-col">
+                                    <?php if ($product['is_sale'] == '1') : ?>
+                                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">SALE</span>
+                                    <?php endif ?>
                                     <img alt="<?= $product['name'] ?>" class="w-full h-48 object-contain mb-4" src="<?= $product['image'] ?>" />
                                     <h3 class="text-lg font-bold flex-grow">
                                         <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>" class="hover:text-red-600 transition">
@@ -55,12 +58,10 @@
                     <!-- Nút điều hướng -->
                     <div class="absolute top-1/2 -left-6 transform -translate-y-1/2">
                         <button class="swiper-button-prev bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition">
-                            <i class="fas fa-chevron-left text-gray-600 text-xl"></i>
                         </button>
                     </div>
                     <div class="absolute top-1/2 -right-6 transform -translate-y-1/2">
                         <button class="swiper-button-next bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition">
-                            <i class="fas fa-chevron-right text-gray-600 text-xl"></i>
                         </button>
                     </div>
                 </div>

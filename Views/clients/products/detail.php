@@ -150,23 +150,21 @@
 
         <div class="max-w-4xl mx-auto p-4">
             <h1 class="text-lg font-bold mb-4">Giới thiệu về <?= $product['name'] ?></h1>
-            <div style="text-align: justify; line-height: 1.6;">
-                <?= $product['description'] ?>
+            <div class="product-description">
+                <div class="short-description">
+                    <?= substr($product['description'], 0, 300) ?>
+                    <?php if (strlen($product['description']) > 300): ?>
+                        <button class="read-more-btn text-blue-500 hover:underline cursor-pointer">Xem thêm</button>
+                    <?php endif; ?>
+                </div>
+                <?php if (strlen($product['description']) > 300): ?>
+                    <div class="full-description hidden">
+                        <?= substr($product['description'], 300) ?>
+                        <button class="read-less-btn text-blue-500 hover:underline cursor-pointer mt-2">Thu gọn</button>
+                    </div>
+                <?php endif; ?>
             </div>
             <h1 class="text-lg font-bold mb-4">Đánh giá & Nhận xét <?= $product['name'] ?></h1>
-            <div class="flex items-center mb-4">
-                <span class="text-red-500 text-4xl font-bold">0/5</span>
-                <div class="ml-4">
-                    <div class="flex items-center">
-                        <i class="far fa-star text-gray-400 text-2xl"></i>
-                        <i class="far fa-star text-gray-400 text-2xl"></i>
-                        <i class="far fa-star text-gray-400 text-2xl"></i>
-                        <i class="far fa-star text-gray-400 text-2xl"></i>
-                        <i class="far fa-star text-gray-400 text-2xl"></i>
-                    </div>
-                    <span class="text-gray-500">0 đánh giá & nhận xét</span>
-                </div>
-            </div>
             <hr>
             <div class="space-y-2">
                 <div class="col-md-6">
@@ -204,23 +202,32 @@
                 <h2 class="mt-5">Các sản phẩm liên quan</h2>
                 <div class="swiper-wrapper">
                     <?php foreach ($productReleads as $pro) : ?>
-                        <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full">
+                        <div class="swiper-slide bg-white p-4 rounded-lg shadow h-full flex flex-col">
+                            <?php if ($pro['is_sale'] == '1') : ?>
+                                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">SALE</span>
+                            <?php endif ?>
                             <img class="w-full h-48 object-cover mb-4" src="<?= $pro['image'] ?>" alt="" />
-                            <h3 class="text-lg font-bold">
+                            <h3 class="text-lg font-bold flex-grow">
                                 <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pro['id'] ?>" class="btn btn-outline-success">
                                     <h5 class="product-name"><?= $pro['name'] ?></h5>
                                 </a>
                             </h3>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-red-500 text-xl font-bold mb-2"><span class="product-price"><?= number_format($pro['price']) ?> đ</span></span>
+                            <div class="mt-auto">
+                                <!--  -->
+                                <?php if (!empty($pro['price_sale']) && $pro['price_sale'] > 0) : ?>
+                                    <div class="flex items-center space-x-2"> <span class="text-gray-500 line-through">
+                                            <?= number_format($pro['price']) ?> đ
+                                        </span>
+                                        <span class="text-red-500 text-xl font-bold">
+                                            <?= number_format($pro['price_sale']) ?> đ
+                                        </span>
+                                    </div>
+                                <?php else : ?>
+                                    <span class="text-red-500 text-xl font-bold">
+                                        <?= number_format($pro['price']) ?> đ
+                                    </span>
+                                <?php endif ?>
                             </div>
-<!-- <<<<<<< HEAD
-======= 
-                            <div class="text-red-500 text-xl font-bold mb-2">
-                                <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0</span>
-                                <span class="text-gray-500">(1 đánh giá)</span>
-                            </div>
->>>>>>> 8d94403b2dbbaaf0108b27d8df25e2de1ddb783d -->
                         </div>
                     <?php endforeach ?>
                 </div>

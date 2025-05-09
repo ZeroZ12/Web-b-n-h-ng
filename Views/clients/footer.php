@@ -238,6 +238,27 @@
       }
     });
   });
+  // mô tả
+  document.addEventListener('DOMContentLoaded', function() {
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const readLessBtn = document.querySelector('.read-less-btn');
+    const shortDescription = document.querySelector('.short-description');
+    const fullDescription = document.querySelector('.full-description');
+
+    if (readMoreBtn && fullDescription) {
+      readMoreBtn.addEventListener('click', function() {
+        shortDescription.classList.add('hidden');
+        fullDescription.classList.remove('hidden');
+      });
+    }
+
+    if (readLessBtn && fullDescription) {
+      readLessBtn.addEventListener('click', function() {
+        fullDescription.classList.add('hidden');
+        shortDescription.classList.remove('hidden');
+      });
+    }
+  });
 </script>
 </body>
 

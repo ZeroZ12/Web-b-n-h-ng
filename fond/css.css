@@ -68,7 +68,8 @@
 /* Thêm vào phần style */
 .swiper-slide {
     min-height: 350px;
-    height: 350px;
+    height: auto;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -177,4 +178,28 @@
 
 .rounded {
     border-radius: 0.25rem;
+}
+
+
+/* sản phẩm */
+
+.product-description {
+    margin-top: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.full-description {
+    margin-top: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.read-more-btn, .read-less-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
 }
